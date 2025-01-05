@@ -1,7 +1,24 @@
-import {FaJava, FaReact} from "react-icons/fa";
-import {SiPython, SiMySql} from "react-icons/si";
+import React from 'react';
 
-export default function Home (){
+import {FaJava, FaReact} from "react-icons/fa";
+import {SiMySql} from "react-icons/si";
+
+async function fetchSkills(){
+  try{
+    const res = await fetch('http://localhost:3000/api/skills');
+    if(!res.ok){
+      throw new Error('Failed to fetch skills');
+    }
+    const skills = await res.json();
+    return skills;
+  }catch (err){
+    console.error('Error fetching skills:', err);
+    return [];
+  }
+}
+
+export default function Main (){
+
   return(
     <div className="min-h-screen bg-gray-100 flex flex-col items-center">
       <header className="relative">
@@ -9,7 +26,7 @@ export default function Home (){
           <a href="page.js">Home</a>
           <a href="skills.js">Skills</a>
           <a href="experience.js">Experiences</a>
-          <a href="projects.js">Projects</a>
+          <a href="https://github.com/sygoh0909">Projects</a>
           <a href="contact.js">Contact</a>
         </nav>
       </header>
@@ -48,8 +65,10 @@ export default function Home (){
       </div>
       <div>
         <h2 className="text-2xl font-bold text-sky-950">Education & Experience</h2>
-        <div>
-          <p>Bachelor of Software Engineering (Hons)</p>
+        <div className="relative w-f max w-4xl">
+          <div>
+            <p>Bachelor of Software Engineering (Hons)</p>
+          </div>
         </div>
       </div>
     </div>
