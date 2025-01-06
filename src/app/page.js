@@ -66,7 +66,7 @@ export default function Main (){
               );
             })
           ) : (
-            <li>No skills available</li>
+            <li className='text-gray-400'>No skills available</li>
           )}
       </div>
       <div className='flex items-center justify-center'><a href='skills.js' target='_blank' rel='noopener noreferrer' className='bg-sky-500 hover:bg-blue-300 flex items-center justify-center w-36 h-10 rounded mt-5'>View More</a></div>
