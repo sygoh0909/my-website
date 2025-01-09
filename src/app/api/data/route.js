@@ -1,14 +1,8 @@
-import mysql from 'mysql2/promise';
+import { connectDB } from "@/app/connection/connection";
 
 export async function GET(){
-    const connection = await mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'royallove_2019',
-        database: 'myWebsiteDB',
-    });
-
     try {
+        const connection = await connectDB();
         const [skills] = await connection.query('SELECT * FROM skills');
         const [experiences] = await connection.query('SELECT * FROM experiences');
         return new Response(JSON.stringify({skills, experiences}), {status: 200});
