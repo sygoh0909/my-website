@@ -5,7 +5,7 @@ import * as Icons from "react-icons/fa"
 
 async function fetchData(){
   try{
-    const res = await fetch('http://localhost:3000/api/data');
+    const res = await fetch('/api/data');
     if(!res.ok){
       throw new Error('Failed to fetch data');
     }
@@ -32,14 +32,14 @@ export default function Main (){
     <div className="bg-gray-100 flex flex-col items-center">
       <header className="bg-white sticky top-0 z-50 shadow-md w-full h-12">
         <nav className="absolute flex gap-10 right-0 pr-96 top-2.5 text-sky-950">
-          <a href="page.js" className='hover:text-sky-700'>Home</a>
-          <a href="skills.js" className='hover:text-sky-700'>Skills</a>
-          <a href="experience.js" className='hover:text-sky-700'>Experiences</a>
+          <a href="/" className='hover:text-sky-700'>Home</a>
+          <a href="/skills" className='hover:text-sky-700'>Skills</a>
+          <a href="#experiences" className='hover:text-sky-700'>Experiences</a>
           <a href="https://github.com/sygoh0909" className='hover:text-sky-700'>Projects</a>
-          <a href="contact.js" className='hover:text-sky-700'>Contact</a>
+          <a href="/contact" className='hover:text-sky-700'>Contact</a>
         </nav>
       </header>
-      <div className="mt-20 flex flex-grow items-center gap-24 overflow-y-auto">
+      <div className="mt-20 flex flex-grow items-center gap-12 overflow-y-auto">
         <div className="text-left">
           <h1 className="text-6xl font-bold text-sky-950 mb-8">Hi, I'm Shu Yi</h1>
           <p className="text-xl text-gray-400 mt-10 mb-8">IT Student</p>
@@ -58,7 +58,7 @@ export default function Main (){
               const SkillIcon = Icons[skill.icon];
 
               return(
-                <div key={skill.id} className='bg-white w-96 h-48 rounded-md flex flex-col items-center justify-center text-sky-950 shadow-lg'>
+                <div key={skill.id} className='bg-white w-80 h-40 rounded-md flex flex-col items-center justify-center text-sky-950 shadow-lg'>
                   {SkillIcon ? (
                     <SkillIcon className='text-4xl text-sky-500 mb-8'/>
                   ) : (
@@ -73,9 +73,9 @@ export default function Main (){
             <li className='text-gray-400'>No skills available</li>
           )}
       </div>
-      <div className='flex items-center justify-center'><a href='skills.js' target='_blank' rel='noopener noreferrer' className='bg-sky-500 hover:bg-blue-300 flex items-center justify-center w-36 h-10 rounded mt-5'>View More</a></div>
+      <div className='flex items-center justify-center'><a href='/skills' target='_blank' rel='noopener noreferrer' className='bg-sky-500 hover:bg-blue-300 flex items-center justify-center w-36 h-10 rounded mt-5'>View More</a></div>
     </div>
-    <div>
+    <div id='experiences'>
       <h2 className='text-2xl font-bold text-sky-950 mb-9 mt-20 text-center'>Education and Experience</h2>
       <div className='min-h-screen relative w-full max-w-4xl'>
         <div className='absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-sky-500'></div>
