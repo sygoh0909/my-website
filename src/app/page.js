@@ -5,7 +5,8 @@ import * as Icons from "react-icons/fa"
 
 async function fetchData(){
   try{
-    const res = await fetch('/api/data');
+    const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || '';
+    const res = await fetch(`${baseURL}/api/data`)
     if(!res.ok){
       throw new Error('Failed to fetch data');
     }
