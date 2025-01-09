@@ -12,14 +12,29 @@ if ($conn ->connect_error){
     die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
 }
 
-$query = "SELECT * FROM skills";
-$result = $conn->query($query);
+$query_skills = "SELECT * FROM skills";
+$result_skills = $conn->query($query_skills);
 
 $data = [];
-if ($result->num_rows>0){
-    while ($row = $result->fetch_assoc()){
-        $data[] = $row;
+if ($result_skills && $result_skills->num_rows>0){
+    while ($row = $result_skills->fetch_assoc()){
+        $data['skills'][] = $row;
     }
+}
+else{
+    $data['skills'] = [];
+}
+
+$query_experiences = "SELECT * FROM experiences";
+$result_experiences = $conn->query($query_experiences);
+
+if ($result_experiences && $result_experiences->num_rows>0){
+    while ($row = $result_experiences->fetch_assoc()){
+        $data['experiences'][] = $row;
+    }
+}
+else{
+    $data['experiences'] = [];
 }
 
 echo json_encode ($data);
