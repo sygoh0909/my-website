@@ -14,7 +14,7 @@ const Header = ({ menuOpen, setMenuOpen }) => (
         <a href="/" className="hover:text-sky-700">Home</a>
         <a href="/skills" className="hover:text-sky-700">Skills</a>
         <a href="#experiences" className="hover:text-sky-700">Experiences</a>
-        <a href="https://github.com/sygoh0909" className="hover:text-sky-700">Projects</a>
+        <a href="https://github.com/sygoh0909" className="hover:text-sky-700" target='_blank' rel='noopener noreferrer'>Projects</a>
         <a href="/contact" className="hover:text-sky-700">Contact</a>
       </div>
       <div className="sm:hidden flex items-center">
@@ -31,7 +31,7 @@ const Header = ({ menuOpen, setMenuOpen }) => (
         <a href="/" className="py-2 hover:text-sky-700">Home</a>
         <a href="/skills" className="py-2 hover:text-sky-700">Skills</a>
         <a href="#experiences" className="py-2 hover:text-sky-700">Experiences</a>
-        <a href="https://github.com/sygoh0909" className="py-2 hover:text-sky-700">Projects</a>
+        <a href="https://github.com/sygoh0909" className="py-2 hover:text-sky-700" target='_blank' rel='noopener noreferrer'>Projects</a>
         <a href="/contact" className="py-2 hover:text-sky-700">Contact</a>
       </div>
     )}
