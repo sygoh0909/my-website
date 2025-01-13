@@ -1,16 +1,23 @@
+import fs from 'fs';
+import path from 'path';
+
+export const runtime = 'nodejs';
+
 export async function GET(){
-    try {
-        const URL = "http://sy-website.infinityfreeapp.com/db-api.php";
-        const res = await fetch(URL);
-        if (!res.ok){
-            throw new Error("Failed to fetch data from API...");
-        }
-        const data = await res.json();
-        const {skills, experiences} = data;
-        return new Response (JSON.stringify({skills, experiences}), {status:200});
-    }
-    catch(err){
-        console.error("Database query error: ", err);
-        return new Response (JSON.stringify({error: "Failed to fetch data"}), {status:500});
+    try{
+        const filePath = path.join(process.cwd(), 'data', 'data.json');
+        const fileData = fs.readFileSync(filePath, 'utf-8');
+        const data = JSON.parse(fileData);
+
+        return new Response(JSON.stringify(data), {
+            status: 200,
+            headers: {'Content-Type': 'application/json'},
+        });
+    }catch (err){
+        console.error('Error reading JSON file:', err);
+        return new Response(
+            JSON.stringify({error: 'Failed to load data'}),
+            {status: 500}
+        );
     }
 }

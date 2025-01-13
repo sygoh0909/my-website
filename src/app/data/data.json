@@ -1,0 +1,19 @@
+{
+  "skills": [
+    {
+      "id": "1",
+      "name": "Java",
+      "description": "Object-Oriented Programming",
+      "icon": "FaJava"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "1",
+      "name": "Bachelor of Software Engineering",
+      "year": "2023-Present",
+      "description": "Sunway University",
+      "achievement": "a1"
+    }
+  ]
+}
