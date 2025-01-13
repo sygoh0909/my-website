@@ -107,7 +107,7 @@ export default function Main() {
 
       <div id="experiences" className="mt-20">
         <h2 className="text-2xl font-bold text-sky-950 mb-9 text-center">Education and Experience</h2>
-        <div className="relative w-full max-w-4xl mx-auto">
+        <div className="relative w-full max-w-4xl mx-auto min-h-screen">
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-sky-500"></div>
           <div className="flex flex-col text-sky-950 gap-10 sm:gap-12">
             {experiences.map((experience, index) => {
