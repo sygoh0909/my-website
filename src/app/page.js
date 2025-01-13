@@ -87,7 +87,7 @@ export default function Main (){
                 <p className='text-[14px]'>{experience.year}</p>
                 <h3 className='font-bold mb-4 mt-2'>{experience.name}</h3>
                 <p className='text-[14px]'>{experience.description}</p>
-                <p className='text-xs bg-sky-200 text-sky-500 w-28 h-8 rounded-full flex justify-center items-center mt-2'>{experience.acheivement}</p>
+                <p className='text-xs bg-sky-200 text-sky-500 w-28 h-8 rounded-full flex justify-center items-center mt-2'>{experience.achievement}</p>
               </div>
             );
           })}

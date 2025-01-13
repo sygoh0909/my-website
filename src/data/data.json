@@ -1,0 +1,80 @@
+{
+  "skills": [
+    {
+      "id": "1",
+      "name": "Java",
+      "description": "Object-Oriented Programming",
+      "icon": "FaJava"
+    },
+    {
+      "id": "2",
+      "name": "React.js",
+      "description": "Frontend Development",
+      "icon": "FaReact"
+    },
+    {
+      "id": "3",
+      "name": "SQL",
+      "description": "Database Management",
+      "icon": "FaDatabase"
+    },
+    {
+      "id": "4",
+      "name": "PHP",
+      "description": "Backend Development",
+      "icon": "FaPhp"
+    },
+    {
+      "id": "5",
+      "name": "Python",
+      "description": "General Purpose Programming",
+      "icon": "FaPython"
+    },
+    {
+      "id": "6",
+      "name": "HTML",
+      "description": "Markup Language for Web Pages",
+      "icon": "FaHtml5"
+    },
+    {
+      "id": "7",
+      "name": "CSS",
+      "description": "Styling Web Pages",
+      "icon": "FaCss3Alt"
+    },
+    {
+      "id": "8",
+      "name": "JavaScript",
+      "description": "Scripting Language for Web Pages",
+      "icon": "FaJs"
+    },
+    {
+      "id": "9",
+      "name": "Git",
+      "description": "Version Control",
+      "icon": "FaGit"
+    },
+    {
+      "id": "10",
+      "name": "Node.js",
+      "description": "JavaScript Runtime Environment",
+      "icon": "FaNode"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "1",
+      "name": "Bachelor of Software Engineering",
+      "year": "2023-Present",
+      "description": "Sunway University",
+      "achievement": "-"
+    },
+    {
+      "id": "2",
+      "name": "PR member",
+      "year": "2023-2024",
+      "description": "Sunway Music Society",
+      "achievement": "-"
+    }
+  ]
+}
