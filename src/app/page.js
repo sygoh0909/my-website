@@ -87,8 +87,8 @@ export default function Main() {
               const SkillIcon = Icons[skill.icon];
 
               return (
-                <div key={skill.id} className="bg-white w-80 h-40 rounded-md flex flex-col items-center justify-center text-sky-950 shadow-lg">
-                  {SkillIcon ? <SkillIcon className="text-4xl text-sky-500 mb-8" /> : <span>No icon</span>}
+                <div key={skill.id} className="bg-white w-80 h-40 rounded-md flex flex-col items-center justify-center text-sky-950 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+                  {SkillIcon ? <SkillIcon className="text-4xl text-sky-500 mb-8 animate-pulse" /> : <span>No icon</span>}
                   <h3 className="font-bold mb-2">{skill.name}</h3>
                   <p className="text-xs">{skill.description}</p>
                 </div>
