@@ -59,6 +59,18 @@
       "name": "Node.js",
       "description": "JavaScript Runtime Environment",
       "icon": "FaNode"
+    },
+    {
+      "id": "11",
+      "name": "Shell Scripting",
+      "description": "Automation with Command-Line Scripts",
+      "icon": "FaTerminal"
+    },
+    {
+      "id": "12",
+      "name": "Tailwind CSS",
+      "description": "Utility-first CSS framework for rapid UI development",
+      "icon": "FaCss3Alt"
     }
   ],
   "experiences": [
