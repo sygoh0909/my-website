@@ -12,7 +12,7 @@ const Header = ({ menuOpen, setMenuOpen }) => (
         <div className="hidden sm:flex gap-10 text-sky-950">
             <a href="/" className="hover:text-sky-700">Home</a>
             <a href="/skills" className="hover:text-sky-700">Skills</a>
-            <a href="#experiences" className="hover:text-sky-700">Experiences</a>
+            <a href="/#experiences" className="hover:text-sky-700">Experiences</a>
             <a href="https://github.com/sygoh0909" className="hover:text-sky-700">Projects</a>
             <a href="/contact" className="hover:text-sky-700">Contact</a>
         </div>
