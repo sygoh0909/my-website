@@ -75,7 +75,7 @@ export default function Main() {
           </a>
         </div>
         <div className='flex-1 max-w-lg mt-8 sm:mt-0'>
-          <Image src="/capybara.png" alt="pic" width={400} height={300} />
+          <Image src="/profile.png" alt="pic" width={400} height={300} />
         </div>
       </div>
 
@@ -99,7 +99,7 @@ export default function Main() {
           )}
         </div>
         <div className="flex items-center justify-center">
-          <a href="/skills" target="_blank" rel="noopener noreferrer" className="bg-sky-500 hover:bg-blue-300 flex items-center justify-center w-36 h-10 rounded mt-5">
+          <a href="/skills" className="bg-sky-500 hover:bg-blue-300 flex items-center justify-center w-36 h-10 rounded mt-5">
             View More
           </a>
         </div>
