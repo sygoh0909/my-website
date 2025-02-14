@@ -13,7 +13,7 @@ const Header = ({ menuOpen, setMenuOpen }) => (
             <a href="/" className="hover:text-sky-700">Home</a>
             <a href="/skills" className="hover:text-sky-700">Skills</a>
             <a href="/#experiences" className="hover:text-sky-700">Experiences</a>
-            <a href="https://github.com/sygoh0909" className="hover:text-sky-700">Projects</a>
+            <a href="https://github.com/sygoh0909" className="hover:text-sky-700" target='_blank' rel='nooopener noreferrer'>Projects</a>
             <a href="/contact" className="hover:text-sky-700">Contact</a>
         </div>
         <div className="sm:hidden flex items-center">
@@ -52,7 +52,7 @@ export default function Main(){
     return(
         <div className="bg-gray-100 flex flex-col items-center">
             <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-            <h2 className="text-2xl font-bold text-sky-950 mb-9 mt-20 text-center">Technical skills</h2>
+            <h2 className="text-2xl font-bold text-sky-950 mb-9 mt-10 text-center">Technical skills</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {skills && skills.length > 0 ? (
                 skills.map((skill) => {
