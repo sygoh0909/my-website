@@ -5,9 +5,9 @@ export async function fetchData(){
       throw new Error('Failed to fetch data');
     }
     const data = await res.json();
-    return {skills: data.skills || [], experiences: data.experiences || []};
+    return {experiences: data.experiences || [], projects: data.projects};
   }catch (err){
     console.error('Error fetching data:', err);
-    return {skills:[], experiences:[]};
+    return {experiences:[], projects:[]};
   }
 }

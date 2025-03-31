@@ -1,78 +1,4 @@
 {
-  "skills": [
-    {
-      "id": "1",
-      "name": "Java",
-      "description": "Object-Oriented Programming",
-      "icon": "FaJava"
-    },
-    {
-      "id": "2",
-      "name": "React.js",
-      "description": "Frontend Development",
-      "icon": "FaReact"
-    },
-    {
-      "id": "3",
-      "name": "SQL",
-      "description": "Database Management",
-      "icon": "FaDatabase"
-    },
-    {
-      "id": "4",
-      "name": "PHP",
-      "description": "Backend Development",
-      "icon": "FaPhp"
-    },
-    {
-      "id": "5",
-      "name": "Python",
-      "description": "General Purpose Programming",
-      "icon": "FaPython"
-    },
-    {
-      "id": "6",
-      "name": "HTML",
-      "description": "Markup Language for Web Pages",
-      "icon": "FaHtml5"
-    },
-    {
-      "id": "7",
-      "name": "CSS",
-      "description": "Styling Web Pages",
-      "icon": "FaCss3Alt"
-    },
-    {
-      "id": "8",
-      "name": "JavaScript",
-      "description": "Scripting Language for Web Pages",
-      "icon": "FaJs"
-    },
-    {
-      "id": "9",
-      "name": "Git",
-      "description": "Version Control",
-      "icon": "FaGit"
-    },
-    {
-      "id": "10",
-      "name": "Node.js",
-      "description": "JavaScript Runtime Environment",
-      "icon": "FaNode"
-    },
-    {
-      "id": "11",
-      "name": "Shell Scripting",
-      "description": "Automation with Command-Line Scripts",
-      "icon": "FaTerminal"
-    },
-    {
-      "id": "12",
-      "name": "Tailwind CSS",
-      "description": "Utility-first CSS framework for rapid UI development",
-      "icon": "FaCss3Alt"
-    }
-  ],
   "experiences": [
     {
       "id": "1",
@@ -93,7 +19,45 @@
       "name": "Cisco Networking Academy",
       "year": "2024",
       "description": "Learner",
-      "achievement": "badges & certificates"
+      "achievement": "Badges & Certificates"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Book Management System",
+      "description": "Programming principles subject assignment",
+      "skills": "Python"
+    },
+    {
+      "id": "2",
+      "name": "Pokemon Game",
+      "description": "Object-oriented programming fundamentals subject assignment",
+      "skills": "Java"
+    },
+    {
+      "id": "3",
+      "name": "Blob the Flog Website",
+      "description": "Web fundamentals subject assignment",
+      "skills": "HTML, CSS, JavaScript"
+    },
+    {
+      "id": "4",
+      "name": "Food Fox Website",
+      "description": "Web Programming subject assignment",
+      "skills": "PHP, HTML, CSS, JavaScript, Figma"
+    },
+    {
+      "id": "5",
+      "name": "Personal Website",
+      "description": "Personal portfolio website",
+      "skills": "Next.js, Tailwind CSS, Node.js"
+    },
+    {
+      "id": "6",
+      "name": "SPVS System Planning",
+      "description": "Software Engineering subject assignment",
+      "skills": "Project Planning, Figma, Diagrams"
     }
   ]
 }
