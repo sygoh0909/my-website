@@ -16,8 +16,8 @@ const Header = ({ menuOpen, setMenuOpen }) => (
         <a href="/">Shu Yi</a>
       </div>
       <div className="hidden sm:flex gap-8 text-sm uppercase font-medium">
-        <a href="/" className="hover:text-gray-300">Home</a>
         <a href="#about" className="hover:text-gray-300">About</a>
+        <a href="#skills" className='hover:text-gray-300'>Skills</a>
         <a href="#experiences" className="hover:text-gray-300">Experiences</a>
         <a href="#projects" className="hover:text-gray-300">Projects</a>
       </div>
@@ -32,8 +32,8 @@ const Header = ({ menuOpen, setMenuOpen }) => (
     </nav>
     {menuOpen && (
       <div className="sm:hidden flex flex-col bg-[#1E3163] text-white py-4 px-6 w-full absolute top-full left-0 shadow-md">
-        <a href="/" className="py-2 hover:text-gray-300" onClick={() => setMenuOpen(false)}>Home</a>
         <a href="#about" className="py-2 hover:text-gray-300" onClick={() => setMenuOpen(false)}>About</a>
+        <a href="#skills" className='py-2 hover:text-gray-300' onClick={() => setMenuOpen(false)}>Skills</a>
         <a href="#experiences" className="py-2 hover:text-gray-300" onClick={() => setMenuOpen(false)}>Experiences</a>
         <a href="#projects" className="py-2 hover:text-gray-300" onClick={() => setMenuOpen(false)}>Projects</a>
       </div>
@@ -42,6 +42,13 @@ const Header = ({ menuOpen, setMenuOpen }) => (
 );
 
 export default function Main() {
+  const [skills, setSkills] = useState({
+    programmingLanguages: [],
+    frontend: [],
+    design: [],
+    versionControl: [],
+    architecture: [],
+  });
   const [experiences, setExperiences] = useState([]);
   const [projects, setProjects] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,6 +56,13 @@ export default function Main() {
   useEffect(() => {
     fetchData()
       .then((data) => {
+        setSkills({
+          programmingLanguages: data.programmingLanguages,
+          frontend: data.frontend,
+          design: data.design,
+          versionControl: data.versionControl,
+          architecture: data.architecture
+        });
         setExperiences(data.experiences);
         setProjects(data.projects.map(project => ({
           ...project,
@@ -76,6 +90,28 @@ export default function Main() {
         </div>
       </motion.div>
 
+      <motion.div id="skills" className="mt-20 w-full max-w-5xl px-6" initial="hidden" animate="visible" variants={fadeIn}>
+        <h2 className="text-4xl font-bold mb-6 text-center text-white">Skills</h2>
+        <div className="space-y-8">
+          {Object.keys(skills).map((category) => (
+            <div key={category}>
+              <h3 className="text-2xl font-bold mb-4 text-white">{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                {skills[category].map((skill) => {
+                  const IconComponent = Icons[skill.icon];
+                  return (
+                  <div key={skill.id} className="p-4 bg-[#2A1B5F] rounded-lg shadow-md text-center">
+                    <IconComponent className="text-4xl mb-2" />
+                    <p className="mt-2 text-lg text-white">{skill.name}</p>
+                  </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
       <motion.div id="experiences" className="mt-20 w-full max-w-5xl px-6" initial="hidden" animate="visible" variants={fadeIn}>
         <h2 className="text-4xl font-bold mb-6 text-center text-white">Education & Experience</h2>
         <div className="space-y-8">
@@ -96,12 +132,13 @@ export default function Main() {
           {projects.map((project) => (
             <motion.div key={project.id} className="p-6 rounded-lg bg-gradient-to-br from-[#3E2C75] to-[#2E3A65] shadow-md" variants={fadeIn}>
               <h3 className="text-2xl font-bold">{project.name}</h3>
-              <p className="mt-2 text-lg">{project.description}</p>
+              <p className="mt-2 text-md">{project.description}</p>
               <div className="flex flex-wrap gap-2 mt-3">
                 {project.skills.map((skill, index) => (
                   <span key={index} className="text-sm bg-[#6A5ACD] text-white px-3 py-1 rounded-full">{skill}</span>
                 ))}
               </div>
+              {/* <a>View project</a> */}
             </motion.div>
           ))}
         </div>
