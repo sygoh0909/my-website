@@ -10,7 +10,7 @@
     { "id": "1", "name": "JavaScript", "icon": "FaJs" },
     { "id": "2", "name": "HTML", "icon": "FaHtml5" },
     { "id": "3", "name": "CSS", "icon": "FaCss3Alt" },
-    { "id": "4", "name": "React.js", "icon": "FaReact" },
+    { "id": "4", "name": "Next.js", "icon": "FaReact" },
     { "id": "5", "name": "Node.js", "icon": "FaNode" },
     { "id": "6", "name": "Tailwind CSS", "icon": "FaCss3Alt" }
   ],
