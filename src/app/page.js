@@ -294,7 +294,7 @@ export default function Main() {
             </motion.h2>
 
             <div className="space-y-8 relative">
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/20 via-purple-500 to-purple-500/20 hidden sm:block"></div>
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/20 via-purple-500 to-purple-500/20 left-4 sm:left-8"></div>
 
               {experiences.map((exp, index) => (
                 <motion.div
@@ -305,8 +305,8 @@ export default function Main() {
                   whileInView="visible"
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  <div className="absolute left-0 top-2 w-6 h-6 rounded-full bg-purple-500 border-4 border-[#1A1A40] hidden sm:block"></div>
-                  <div className="absolute left-0 top-2 w-6 h-6 rounded-full bg-purple-500/20 animate-ping hidden sm:block"></div>
+                  <div className="absolute left-0 top-2 w-6 h-6 rounded-full bg-purple-500 border-4 border-[#1A1A40]"></div>
+                  <div className="absolute left-0 top-2 w-6 h-6 rounded-full bg-purple-500/20 animate-ping"></div>
 
                   <motion.div
                     className="p-6 bg-gradient-to-br from-[#1A1A40] to-[#1E3163] rounded-xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
