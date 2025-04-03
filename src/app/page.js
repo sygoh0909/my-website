@@ -314,7 +314,7 @@ export default function Main() {
                   >
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
                       <h3 className="text-2xl font-bold text-purple-300">{exp.name}</h3>
-                      <span className="text-sm bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full">
+                      <span className="text-sm bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full max-w-fit">
                         {exp.year}
                       </span>
                     </div>

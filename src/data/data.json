@@ -34,10 +34,10 @@
     },
     {
       "id": "2",
-      "name": "PR member",
+      "name": "Committee Member - Public Relation Department",
       "year": "2023-2024",
       "description": "Sunway Music Society",
-      "achievement": "-"
+      "achievement": "Host and promote events"
     },
     {
       "id": "3",
@@ -45,6 +45,13 @@
       "year": "2024",
       "description": "Learner",
       "achievement": "Badges & Certificates"
+    },
+    {
+      "id": "4",
+      "name": "Foundation in Arts",
+      "year": "2022-2023",
+      "description": "Sunway College",
+      "achievement": "CGPA: 3.98"
     }
   ],
   "projects": [
@@ -89,6 +96,13 @@
       "description": "A Software Engineering subject assignment, involving 4 members, which focused on planning and designing a software project. This included creating project documentation, wireframes, and system architecture diagrams. Figma was used to design the mobile app and in-car display interface for the project, while various diagrams such as use case diagrams, sequence diagrams, class diagrams, and activity diagrams were created to illustrate system functionality. My role involved project planning, designing UI prototypes, and developing detailed system diagrams.",
       "skills": "Project Planning, Figma, UML Diagrams",
       "link": "https://github.com/sygoh0909/SPVS-System-Planning"
+    }
+  ],
+  "activities":[
+    {
+      "id": "1",
+      "name": "Sunway Merdeka Event Performance",
+      "description": ""
     }
   ]
 }
