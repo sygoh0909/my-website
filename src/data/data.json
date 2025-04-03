@@ -52,37 +52,43 @@
       "id": "1",
       "name": "Book Management System",
       "description": "A group assignment for the Programming Principles subject, involving 5 members. The project focuses on developing a Python-based system for managing books, including adding, updating, searching, and deleting records. My role includes implementing key functionalities and ensuring code efficiency.",
-      "skills": "Python"
+      "skills": "Python",
+      "link": "https://github.com/sygoh0909/Book-management-system"
     },
     {
       "id": "2",
       "name": "Pokemon Game",
       "description": "A group assignment for the Object-Oriented Programming Fundamentals subject, invloving 5 members, where we developed a text-based turn-based battle game inspired by Pokémon using Java. The project focused on implementing OOP principles such as inheritance and encapsulation. My role included designing class structures and implementing battle mechanics.",
-      "skills": "Java"
+      "skills": "Java",
+      "link": "https://github.com/sygoh0909/Pokemon-Game"
     },
     {
       "id": "3",
       "name": "Blob the Flog Website",
       "description": "A Web Fundamentals subject assignment, involving 4 members, where our team built an event page featuring Blob the Flog, a fictional character we created and designed. The project involved HTML, CSS, and JavaScript to create engaging animations and user interactions. My role included front-end development and UI/UX design.",
-      "skills": "HTML, CSS, JavaScript"
+      "skills": "HTML, CSS, JavaScript",
+      "link": "https://github.com/sygoh0909/Blob-the-Flog-Website"
     },
     {
       "id": "4",
       "name": "Food Fox Website",
       "description": "A Web Programming subject teamwork assignment focused on addressing SDG 2 (Zero Hunger) through a PHP-based website. The platform includes features such as an event registration system and a donation page to support food aid initiatives. Additionally, it has an admin panel for managing users, events, and donations. The project incorporated user authentication, data management, and responsive design using PHP, HTML, CSS, and JavaScript. My role included back-end development with PHP, designing UI mockups in Figma, and implementing key functionalities for the event, donation and admin systems.",
-      "skills": "PHP, HTML, CSS, JavaScript, Figma"
+      "skills": "PHP, HTML, CSS, JavaScript, Figma",
+      "link": "https://github.com/sygoh0909/Food-Fox-Website"
     },
     {
       "id": "5",
       "name": "Personal Website",
       "description": "A personal portfolio website showcasing my projects, skills, and experience. Built using Next.js and Tailwind CSS for a modern, responsive design, with a back-end powered by Node.js. The website is deployed through Vercel, ensuring fast performance and seamless deployment. This project highlights my ability to develop and deploy full-stack web applications.",
-      "skills": "Next.js, Tailwind CSS, Node.js, Vercel"
+      "skills": "Next.js, Tailwind CSS, Node.js, Vercel",
+      "link": "https://github.com/sygoh0909/my-website"
     },
     {
       "id": "6",
       "name": "SPVS System Planning",
       "description": "A Software Engineering subject assignment, involving 4 members, which focused on planning and designing a software project. This included creating project documentation, wireframes, and system architecture diagrams. Figma was used to design the mobile app and in-car display interface for the project, while various diagrams such as use case diagrams, sequence diagrams, class diagrams, and activity diagrams were created to illustrate system functionality. My role involved project planning, designing UI prototypes, and developing detailed system diagrams.",
-      "skills": "Project Planning, Figma, UML Diagrams"
+      "skills": "Project Planning, Figma, UML Diagrams",
+      "link": "https://github.com/sygoh0909/SPVS-System-Planning"
     }
   ]
 }
