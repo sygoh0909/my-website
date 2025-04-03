@@ -96,13 +96,13 @@ const Header = ({ menuOpen, setMenuOpen }) => (
     <AnimatePresence>
       {menuOpen && (
         <motion.div
-          className="sm:hidden flex flex-col bg-[#1E3163] text-white py-4 px-6 w-full absolute top-full left-0 shadow-md"
+          className="sm:hidden flex flex-col bg-[#1E3163] text-white py-4 px-6 w-full absolute top-full left-0 shadow-md uppercase text-sm"
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
         >
-          {['About', 'Skills', 'Experiences', 'Projects'].map((item) => (
+          {['about', 'akills', 'experiences', 'projects'].map((item) => (
             <motion.a
               key={item}
               href={`#${item}`}
@@ -376,20 +376,26 @@ export default function Main() {
                       ))}
                     </div>
 
-                    <motion.a
+                    <motion.div className="mt-auto">
+                      <motion.a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block w-full text-center bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors"
-                      whileHover={{ scale: 1.02 }}
+                      className="inline-flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-lg group-hover:from-purple-700 group-hover:to-purple-800 transition-all duration-300"
+                      whileHover={{
+                          scale: 1.03,
+                          boxShadow: "0 10px 25px -5px rgba(126, 34, 206, 0.4)"
+                      }}
                       whileTap={{ scale: 0.98 }}
-                    >
-                      View Project
-                    </motion.a>
+                      >
+                        View Project
+                        <Icons.FaExternalLinkAlt className="ml-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity" />
+                      </motion.a>
+                    </motion.div>
                   </div>
 
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-purple-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-purple-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                     initial={{ opacity: 0 }}
                   />
                 </motion.div>
