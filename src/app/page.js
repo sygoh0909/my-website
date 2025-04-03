@@ -102,7 +102,7 @@ const Header = ({ menuOpen, setMenuOpen }) => (
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
         >
-          {['about', 'skills', 'experiences', 'projects'].map((item) => (
+          {['About', 'Skills', 'Experiences', 'Projects'].map((item) => (
             <motion.a
               key={item}
               href={`#${item}`}
