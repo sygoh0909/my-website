@@ -6,7 +6,7 @@
     { "id": "5", "name": "SQL", "icon": "FaDatabase" },
     { "id": "8", "name": "Shell Scripting", "icon": "FaTerminal" }
   ],
-  "frontend (included frameworks)":[
+  "frontend":[
     { "id": "1", "name": "JavaScript", "icon": "FaJs" },
     { "id": "2", "name": "HTML", "icon": "FaHtml5" },
     { "id": "3", "name": "CSS", "icon": "FaCss3Alt" },
