@@ -6,13 +6,13 @@
     { "id": "5", "name": "SQL", "icon": "FaDatabase" },
     { "id": "8", "name": "Shell Scripting", "icon": "FaTerminal" }
   ],
-  "frontend":[
+  "frontend (included frameworks)":[
     { "id": "1", "name": "JavaScript", "icon": "FaJs" },
     { "id": "2", "name": "HTML", "icon": "FaHtml5" },
     { "id": "3", "name": "CSS", "icon": "FaCss3Alt" },
     { "id": "4", "name": "Next.js", "icon": "FaReact" },
     { "id": "5", "name": "Node.js", "icon": "FaNode" },
-    { "id": "6", "name": "Tailwind CSS", "icon": "FaCss3Alt" }
+    { "id": "5", "name": "Tailwind CSS", "icon": "FaCss3Alt" }
   ],
   "design":[
     { "id": "1", "name": "Figma", "icon": "FaFigma" },
