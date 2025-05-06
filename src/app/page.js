@@ -188,7 +188,7 @@ export default function Main() {
         {/* About Section */}
         <section id="about" className="pt-32 pb-20">
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-between gap-12"
+            className="flex flex-col-reverse sm:flex-row items-center justify-between gap-12"
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
