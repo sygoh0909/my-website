@@ -43,13 +43,6 @@
     },
     {
       "id": "2",
-      "name": "Committee Member - Public Relation Department",
-      "year": "2023-2024",
-      "description": "Sunway Music Society",
-      "achievement": "Host and promote events"
-    },
-    {
-      "id": "3",
       "name": "Foundation in Arts",
       "year": "2022-2023",
       "description": "Sunway College",
@@ -105,13 +98,6 @@
       "description": "A platform designed to help users monitor and manage tenant payments with ease. The system allows users to track missed payments, generate receipts for completed transactions, and produce detailed reports highlighting outstanding dues—ensuring efficient and transparent payment management for residential communities.",
       "skills": "Node.js, Next.js, PostgreSQL, Tailwind CSS",
       "link": ""
-    }
-  ],
-  "activities": [
-    {
-      "id": "1",
-      "name": "Sunway Merdeka Event Performance",
-      "description": ""
     }
   ]
 }
