@@ -218,11 +218,12 @@ export default function Main() {
               >
                 I'm currently studying Software Engineering with a strong passion for creating innovative solutions. I thrive on solving complex problems and continuously expanding my knowledge in the ever-evolving tech landscape.
               </motion.p>
-            </motion.div>
 
-            <motion.div
+              <motion.div
               className="mt-8" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-block bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300">View My Resume<Icons.FaDownload className="inline ml-2 text-sm" /></a>
+              </motion.div>
+
             </motion.div>
 
             <motion.div
