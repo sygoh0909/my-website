@@ -5,9 +5,9 @@ export async function fetchData(){
       throw new Error('Failed to fetch data');
     }
     const data = await res.json();
-    return {programmingLanguages: data.programmingLanguages || [], frontend: data.frontend || [], design: data.design || [], versionControl: data.versionControl || [], architecture: data.architecture || [], experiences: data.experiences || [], projects: data.projects};
+    return {languages: data.languages || [], frameworks: data.frameworks || [], databases: data.databases || [], platforms: data.platforms || [], otherSkills: data.otherSkills || [], education: data.education || [], projects: data.projects};
   }catch (err){
     console.error('Error fetching data:', err);
-    return {programmingLanguages:[], frontend:[], design:[], versionControl:[], architecture:[], experiences:[], projects:[]};
+    return {languages:[], frameworks:[], databases:[], platforms:[], otherSkills:[], education:[], projects:[]};
   }
 }

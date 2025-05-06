@@ -1,30 +1,39 @@
 {
-  "programmingLanguages": [
+  "languages": [
     { "id": "1", "name": "Java", "icon": "FaJava" },
     { "id": "2", "name": "Python", "icon": "FaPython" },
     { "id": "3", "name": "PHP", "icon": "FaPhp" },
-    { "id": "5", "name": "SQL", "icon": "FaDatabase" },
-    { "id": "8", "name": "Shell Scripting", "icon": "FaTerminal" }
+    { "id": "4", "name": "JavaScript", "icon": "SiJavascript" }
   ],
-  "frontend":[
-    { "id": "1", "name": "JavaScript", "icon": "FaJs" },
-    { "id": "2", "name": "HTML", "icon": "FaHtml5" },
-    { "id": "3", "name": "CSS", "icon": "FaCss3Alt" },
-    { "id": "4", "name": "Next.js", "icon": "FaReact" },
-    { "id": "5", "name": "Node.js", "icon": "FaNode" },
-    { "id": "5", "name": "Tailwind CSS", "icon": "FaCss3Alt" }
+  "frameworks": [
+    { "id": "1", "name": "HTML", "icon": "FaHtml5" },
+    { "id": "2", "name": "CSS", "icon": "SiCss3" },
+    { "id": "3", "name": "Next.js", "icon": "SiNextdotjs" },
+    { "id": "4", "name": "Node.js", "icon": "FaNode" },
+    { "id": "5", "name": "Express.js", "icon": "SiExpress" },
+    { "id": "6", "name": "Tailwind CSS", "icon": "SiTailwindcss" }
   ],
-  "design":[
+  "databases": [
+    { "id": "1", "name": "SQL", "icon": "FaDatabase" },
+    { "id": "2", "name": "PostgreSQL", "icon": "FaDatabase" },
+    { "id": "3", "name": "Sequelize", "icon": "FaDatabase" },
+    { "id": "4", "name": "Git", "icon": "FaGit" },
+    { "id": "5", "name": "GitHub", "icon": "FaGithub" },
+    { "id": "6", "name": "Vercel", "icon": "SiVercel" }
+  ],
+  "platforms": [
     { "id": "1", "name": "Figma", "icon": "FaFigma" },
-    { "id": "2", "name": "Canva", "icon": "FaPaintBrush" }
+    { "id": "2", "name": "Canva", "icon": "FaPaintBrush" },
+    { "id": "3", "name": "Microsoft Office", "icon": "FaPaintBrush" },
+    { "id": "4", "name": "Visual Studio Code", "icon": "FaCode" },
+    { "id": "5", "name": "IntelliJ", "icon": "FaCode" },
+    { "id": "6", "name": "PHPStorm", "icon": "FaCode" }
   ],
-  "versionControl":[
-    { "id": "1", "name": "Git", "icon": "FaGit" }
+  "otherSkills": [
+    { "id": "1", "name": "UML Diagrams", "icon": "FaProjectDiagram" },
+    { "id": "2", "name": "Flowcharts", "icon": "FaProjectDiagram" }
   ],
-  "architecture":[
-    { "id": "1", "name": "UML Diagrams", "icon": "FaProjectDiagram" }
-  ],
-  "experiences": [
+  "education": [
     {
       "id": "1",
       "name": "Bachelor of Software Engineering",
@@ -41,13 +50,6 @@
     },
     {
       "id": "3",
-      "name": "Cisco Networking Academy",
-      "year": "2024",
-      "description": "Learner",
-      "achievement": "Badges & Certificates"
-    },
-    {
-      "id": "4",
       "name": "Foundation in Arts",
       "year": "2022-2023",
       "description": "Sunway College",
@@ -65,7 +67,7 @@
     {
       "id": "2",
       "name": "Pokemon Game",
-      "description": "A group assignment for the Object-Oriented Programming Fundamentals subject, invloving 4 members, where we developed a text-based turn-based battle game inspired by Pokémon using Java. The project focused on implementing OOP principles such as inheritance and encapsulation. My role included designing class structures and implementing battle mechanics.",
+      "description": "A group assignment for the Object-Oriented Programming Fundamentals subject, involving 4 members, where we developed a text-based turn-based battle game inspired by Pokémon using Java. The project focused on implementing OOP principles such as inheritance and encapsulation. My role included designing class structures and implementing battle mechanics.",
       "skills": "Java",
       "link": "https://github.com/sygoh0909/Pokemon-Game"
     },
@@ -96,9 +98,16 @@
       "description": "A Software Engineering subject assignment, involving 4 members, which focused on planning and designing a software project. This included creating project documentation, wireframes, and system architecture diagrams. Figma was used to design the mobile app and in-car display interface for the project, while various diagrams such as use case diagrams, sequence diagrams, class diagrams, and activity diagrams were created to illustrate system functionality. My role involved project planning, designing UI prototypes, and developing detailed system diagrams.",
       "skills": "Project Planning, Figma, UML Diagrams",
       "link": "https://github.com/sygoh0909/SPVS-System-Planning"
+    },
+    {
+      "id": "7",
+      "name": "Residential Management Website",
+      "description": "A platform designed to help users monitor and manage tenant payments with ease. The system allows users to track missed payments, generate receipts for completed transactions, and produce detailed reports highlighting outstanding dues—ensuring efficient and transparent payment management for residential communities.",
+      "skills": "Node.js, Next.js, PostgreSQL, Tailwind CSS",
+      "link": ""
     }
   ],
-  "activities":[
+  "activities": [
     {
       "id": "1",
       "name": "Sunway Merdeka Event Performance",

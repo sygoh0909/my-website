@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import * as Icons from "react-icons/fa";
-import { fetchData } from './utils/fetchData';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { fetchData } from "./utils/fetchData";
+import { motion, AnimatePresence } from "framer-motion";
+import * as FaIcons from "react-icons/fa";
+import * as SiIcons from "react-icons/si";
 
 // Animations
 const fadeIn = {
@@ -30,6 +31,16 @@ const scaleHover = {
   transition: { duration: 0.3 }
 };
 
+const Icons = { ...FaIcons, ...SiIcons };
+
+const categoryTitles = {
+  languages: "Programming Languages",
+  frameworks: "Frameworks & Libraries",
+  databases: "Databases & Tools",
+  platforms: "Software & Platforms",
+  otherSkills: "Other Skills"
+};
+
 const Header = ({ menuOpen, setMenuOpen }) => (
   <header className="bg-gradient-to-br from-[#120A3A] to-[#1E3163] text-white sticky top-0 z-50 w-full py-4 shadow-lg backdrop-blur-sm bg-opacity-90">
     <nav className="flex justify-between items-center px-6 sm:px-12 max-w-7xl mx-auto">
@@ -42,7 +53,7 @@ const Header = ({ menuOpen, setMenuOpen }) => (
       </motion.div>
 
       <div className="hidden sm:flex gap-8 text-sm uppercase font-medium">
-        {['about', 'skills', 'experiences', 'projects'].map((item) => (
+        {['about', 'skills', 'education', 'projects'].map((item) => (
           <motion.a
             key={item}
             href={`#${item}`}
@@ -102,7 +113,7 @@ const Header = ({ menuOpen, setMenuOpen }) => (
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
         >
-          {['about', 'skills', 'experiences', 'projects'].map((item) => (
+          {['about', 'skills', 'education', 'projects'].map((item) => (
             <motion.a
               key={item}
               href={`#${item}`}
@@ -121,13 +132,13 @@ const Header = ({ menuOpen, setMenuOpen }) => (
 
 export default function Main() {
   const [skills, setSkills] = useState({
-    programmingLanguages: [],
-    frontend: [],
-    design: [],
-    versionControl: [],
-    architecture: [],
+    languages: [],
+    frameworks: [],
+    databases: [],
+    platforms: [],
+    otherSkills: []
   });
-  const [experiences, setExperiences] = useState([]);
+  const [education, setEducation] = useState([]);
   const [projects, setProjects] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -136,18 +147,18 @@ export default function Main() {
     fetchData()
       .then((data) => {
         setSkills({
-          ProgrammingLanguages: data.programmingLanguages,
-          Frontend: data.frontend,
-          Design: data.design,
-          VersionControl: data.versionControl,
-          Architecture: data.architecture
+          languages: data.languages,
+          frameworks: data.frameworks,
+          databases: data.databases,
+          platforms: data.platforms,
+          otherSkills: data.otherSkills,
         });
-        setExperiences(data.experiences);
-        setProjects(data.projects.map(project => ({
+        setEducation(data.education);
+        setProjects(data.projects.map((project) => ({
           ...project,
-          skills: typeof project.skills === 'string'
-            ? project.skills.split(',').map(skill => skill.trim())
-            : project.skills
+          skills: typeof project.skills === "string"
+            ? project.skills.split(",").map(skill => skill.trim())
+            : project.skills,
         })));
         setIsLoading(false);
       })
@@ -210,6 +221,11 @@ export default function Main() {
             </motion.div>
 
             <motion.div
+              className="mt-8" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-block bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300">View My Resume<Icons.FaDownload className="inline ml-2 text-sm" /></a>
+            </motion.div>
+
+            <motion.div
               className="flex-1 flex justify-center"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -248,30 +264,33 @@ export default function Main() {
                     initial={{ x: -20, opacity: 0 }}
                     viewport={{ once: true }}
                   >
-                    {category.split(/(?=[A-Z])/).join(' ')}
+                    {categoryTitles[category] || category}
                   </motion.h3>
                   <motion.div
                     className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6"
                     variants={staggerContainer}
                   >
-                    {items.map((skill) => {
-                      const IconComponent = Icons[skill.icon];
-                      return (
-                        <motion.div
-                          key={skill.id}
-                          className="p-6 bg-[#1A1A40] rounded-xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300 flex flex-col items-center"
-                          variants={itemFadeIn}
-                          whileHover={scaleHover}
-                        >
-                          <div className="relative">
-                            <IconComponent className="text-4xl mb-3 text-purple-300" />
-                            <div className="absolute inset-0 rounded-full bg-purple-500 opacity-0 group-hover:opacity-20 blur-md transition-opacity"></div>
-                          </div>
-                          <p className="mt-2 text-lg font-medium">{skill.name}</p>
-                          <p className="text-sm text-gray-400 mt-1">{skill.level}</p>
-                        </motion.div>
-                      );
-                    })}
+                    {items && items.length > 0 ? (
+                      items.map((skill) => {
+                        const IconComponent = Icons[skill.icon];
+                        return (
+                          <motion.div
+                            key={skill.id}
+                            className="p-6 bg-[#1A1A40] rounded-xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300 flex flex-col items-center"
+                            variants={itemFadeIn}
+                            whileHover={scaleHover}>
+                            <div className="relative">
+                              <IconComponent className="text-4xl mb-3 text-purple-300" />
+                              <div className="absolute inset-0 rounded-full bg-purple-500 opacity-0 group-hover:opacity-20 blur-md transition-opacity"></div>
+                            </div>
+                            <p className="mt-2 text-lg font-medium">{skill.name}</p>
+                            <p className="text-sm text-gray-400 mt-1">{skill.level}</p>
+                          </motion.div>
+                        );
+                      })
+                    ) : (
+                      <p>No skills available</p>
+                    )}
                   </motion.div>
                 </motion.div>
               ))}
@@ -279,8 +298,8 @@ export default function Main() {
           </motion.div>
         </section>
 
-        {/* Experience Section */}
-        <section id="experiences" className="py-20">
+          {/* Experience Section */}
+        <section id="education" className="py-20">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -295,125 +314,118 @@ export default function Main() {
 
             <div className="space-y-8 relative">
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/20 via-purple-500 to-purple-500/20 left-4 sm:left-8"></div>
-
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={exp.id}
-                  className="relative pl-12 sm:pl-16 group"
-                  variants={itemFadeIn}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                >
-                  <div className="absolute left-0 top-2 w-6 h-6 rounded-full bg-purple-500 border-4 border-[#1A1A40]"></div>
-                  <div className="absolute left-0 top-2 w-6 h-6 rounded-full bg-purple-500/20 animate-ping"></div>
-
+              {education && education.length > 0 ? (
+                education.map((exp, index) => (
                   <motion.div
-                    className="p-6 bg-gradient-to-br from-[#1A1A40] to-[#1E3163] rounded-xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
-                    whileHover={{ y: -5 }}
+                    key={exp.id || index}
+                    className="relative pl-12 sm:pl-16 group"
+                    variants={itemFadeIn}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
                   >
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
-                      <h3 className="text-2xl font-bold text-purple-300">{exp.name}</h3>
-                      <span className="text-sm bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full max-w-fit">
-                        {exp.year}
-                      </span>
-                    </div>
-                    <p className="text-gray-300 mt-4">{exp.description}</p>
-                    {exp.achievement && (
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        <span className="text-sm bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full">
-                          {exp.achievement}
+                    <div className="absolute left-0 top-2 w-6 h-6 rounded-full bg-purple-500 border-4 border-[#1A1A40]"></div>
+                    <div className="absolute left-0 top-2 w-6 h-6 rounded-full bg-purple-500/20 animate-ping"></div>
+
+                    <motion.div
+                      className="p-6 bg-gradient-to-br from-[#1A1A40] to-[#1E3163] rounded-xl shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
+                      whileHover={{ y: -5 }}
+                    >
+                      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+                        <h3 className="text-2xl font-bold text-purple-300">{exp.name}</h3>
+                        <span className="text-sm bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full max-w-fit">
+                          {exp.year}
                         </span>
                       </div>
-                    )}
+                      <p className="text-gray-300 mt-4">{exp.description}</p>
+                      {exp.achievement && (
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          <span className="text-sm bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full">
+                            {exp.achievement}
+                          </span>
+                        </div>
+                      )}
+                    </motion.div>
                   </motion.div>
-                </motion.div>
-              ))}
+                ))
+              ) : (
+                <p className="text-center text-gray-400">No education experiences available.</p>
+              )}
             </div>
           </motion.div>
         </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="py-20">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-          >
-            <motion.h2
-              className="text-4xl font-bold mb-16 text-center"
-              variants={fadeIn}
-            >
-              Featured <span className="text-purple-300">Projects</span>
-            </motion.h2>
+{/* Projects Section */}
+<section id="projects" className="py-20">
+  <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={staggerContainer}
+  >
+    <motion.h2
+      className="text-4xl font-bold mb-16 text-center"
+      variants={fadeIn}
+    >
+      Featured <span className="text-purple-300">Projects</span>
+    </motion.h2>
 
-            <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-              variants={staggerContainer}
-            >
-              {projects.map((project) => (
-                <motion.div
-                  key={project.id}
-                  className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#1A1A40] to-[#1E3163] shadow-lg"
-                  variants={itemFadeIn}
-                  whileHover="hover"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-100px" }}
-                >
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold text-purple-300 mb-2">{project.name}</h3>
-                    <p className="text-gray-300 mb-4">{project.description}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.skills.map((skill, index) => (
-                        <span
-                          key={index}
-                          className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded-full"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-
-                    <motion.div className="mt-auto">
-                      <motion.a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-3 rounded-lg group-hover:from-purple-700 group-hover:to-purple-800 transition-all duration-300"
-                      whileHover={{
-                          scale: 1.03,
-                          boxShadow: "0 10px 25px -5px rgba(126, 34, 206, 0.4)"
-                      }}
-                      whileTap={{ scale: 0.98 }}
-                      >
-                        View Project
-                        <Icons.FaExternalLinkAlt className="ml-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity" />
-                      </motion.a>
-                    </motion.div>
-                  </div>
-
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-purple-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                    initial={{ opacity: 0 }}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </section>
-      </main>
-
-      <footer className="py-8 border-t border-[#2A1B5F] text-center text-gray-400">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+    <motion.div
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-8 max-w-7xl mx-auto px-6"
+      variants={staggerContainer}
+    >
+      {projects.map((project) => (
+        <motion.div
+          key={project.id}
+          className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#1A1A40] to-[#1E3163] shadow-lg"
+          variants={itemFadeIn}
+          whileHover="hover"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
         >
-          © {new Date().getFullYear()} Shu Yi Goh. All rights reserved.
-        </motion.p>
-      </footer>
+          <div className="p-6">
+            <h3 className="text-2xl font-bold text-purple-300 mb-2">{project.name}</h3>
+            <p className="text-gray-300 mb-4">{project.description}</p>
+
+            <div className="flex flex-wrap gap-2 mb-6">
+              {project.skills.map((skill, index) => (
+                <span
+                  key={index}
+                  className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded-full"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            <motion.div className="mt-auto">
+  <motion.a
+    href={project.link}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-2 rounded-lg max-w-[200px] w-full mx-auto group-hover:from-purple-700 group-hover:to-purple-800 transition-all duration-300"
+    whileHover={{
+      scale: 1.03,
+      boxShadow: "0 10px 25px -5px rgba(126, 34, 206, 0.4)"
+    }}
+    whileTap={{ scale: 0.98 }}
+  >
+    View Project
+    <Icons.FaExternalLinkAlt className="ml-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity" />
+  </motion.a>
+</motion.div>
+          </div>
+
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-purple-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+            initial={{ opacity: 0 }}
+          />
+        </motion.div>
+      ))}
+    </motion.div>
+  </motion.div>
+</section>
+      </main>
     </div>
   );
 }
