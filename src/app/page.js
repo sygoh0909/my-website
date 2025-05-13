@@ -140,6 +140,7 @@ export default function Main() {
   });
   const [education, setEducation] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [otherExperiences, setOtherExperiences] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -160,6 +161,7 @@ export default function Main() {
             ? project.skills.split(",").map(skill => skill.trim())
             : project.skills,
         })));
+        setOtherExperiences(data.otherExperiences || []);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -170,12 +172,36 @@ export default function Main() {
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#120A3A] to-[#1E3163]">
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#E9E6FF] to-[#D0DBFF] dark:from-[#120A3A] dark:to-[#1E3163] transition-colors text-[#1A1A40] dark:text-white px-4">
+
         <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-          className="w-12 h-12 border-4 border-purple-500 border-t-transparent rounded-full"
-        />
+          initial={{ y: 0, opacity: 0 }}
+          animate={{ y: [0, -10, 0], opacity: 1 }}
+          transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+          className="text-6xl"
+        >
+          🦦🦦🦦
+        </motion.div>
+
+        <motion.p
+          className="mt-6 text-xl font-semibold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Just a sec... making things lovely for you!
+        </motion.p>
+
+        <div className="flex mt-8 space-x-2">
+          {[...Array(3)].map((_, i) => (
+            <motion.span
+              key={i}
+              className="w-3 h-3 bg-purple-500 rounded-full"
+              animate={{ opacity: [0.3, 1, 0.3] }}
+              transition={{ repeat: Infinity, duration: 1.2, delay: i * 0.2 }}
+            />
+          ))}
+        </div>
       </div>
     );
   }
@@ -421,6 +447,49 @@ export default function Main() {
           ))}
         </motion.div>
         </motion.div>
+        </section>
+        <section id="other-experiences" className="py-20">
+          <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
+            <motion.h2
+              className="text-4xl font-bold mb-16 text-center"
+              variants={fadeIn}
+            >
+              Other <span className="text-purple-300">Experiences</span>
+            </motion.h2>
+
+            {otherExperiences && otherExperiences.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-12">
+                {otherExperiences.map((item, index) => (
+                  <motion.div
+                    key={item.id || index}
+                    className="bg-gradient-to-br from-[#1A1A40] to-[#1E3163] p-6 rounded-xl shadow-md hover:shadow-purple-500/30 transition-all duration-300 flex flex-col justify-between"
+                    variants={itemFadeIn}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    whileHover={{ scale: 1.03 }}
+                  >
+                    <div>
+                      <h3 className="text-xl font-semibold text-purple-300">{item.name}</h3>
+                      <p className="text-gray-300 mt-2">{item.description}</p>
+                    </div>
+                    <div className="mt-4 flex flex-wrap gap-2 items-center justify-between">
+                      {item.role && (
+                        <span className="text-xs bg-purple-900/50 text-purple-300 px-3 py-1 rounded-full">
+                          {item.role}
+                        </span>
+                      )}
+                      <span className="text-xs bg-purple-800 text-purple-100 px-3 py-1 rounded-full">
+                        {item.year}
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-center text-gray-400">No other experiences listed.</p>
+            )}
+          </motion.div>
         </section>
       </main>
     </div>
