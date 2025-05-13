@@ -161,7 +161,7 @@
     "id": "8",
     "name": "Sunway SOA Level Up Event",
     "year": "2024",
-    "description": "Lead singer for the School of Arts graduation event.",
+    "description": "Lead singer for the performance at the 'Pyjama Party' themed graduation event.",
     "role": "Singer"
   },
   {
@@ -173,6 +173,13 @@
   },
   {
     "id": "10",
+    "name": "Sunfest Event",
+    "year": "2024",
+    "description": "Performed as a vocalist during Sunway's Sunfest event.",
+    "role": "Singer"
+  },
+  {
+    "id": "11",
     "name": "Taylor's University Event",
     "year": "2024",
     "description": "Performed as lead singer at Taylor’s campus event.",
