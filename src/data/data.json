@@ -112,77 +112,70 @@
     "id": "1",
     "name": "Malam Merdeka Event",
     "year": "2022",
-    "description": "Performed as the vocalist in a band during this Merdeka celebration night.",
+    "description": "Performed as a vocalist for the Merdeka celebration night.",
     "role": "Singer"
   },
   {
     "id": "2",
     "name": "Sunway SDG Event 2022",
     "year": "2022",
-    "description": "Delivered a musical performance as part of a band supporting the Sustainable Development Goals initiative.",
+    "description": "Sang with a band in support of the SDG initiative.",
     "role": "Singer"
   },
   {
     "id": "3",
     "name": "Sunway Got Talent Season 5",
     "year": "2023",
-    "description": "Took the stage as a band vocalist in Sunway's annual talent competition, and manage to get in semi-finals.",
+    "description": "Reached the semi-finals as a band vocalist.",
     "role": "Singer"
   },
   {
     "id": "4",
     "name": "Sunway SDG Event 2023",
     "year": "2023",
-    "description": "Delivered a musical performance as part of a duo supporting the Sustainable Development Goals initiative.",
+    "description": "Performed as a vocalist for the SDG campaign.",
     "role": "Singer"
   },
   {
     "id": "5",
     "name": "Sunway Makan Club Event",
     "year": "2023",
-    "description": "Entertained the crowd with a live band performance during this event.",
+    "description": "Delivered a live band performance for the event.",
     "role": "Singer"
   },
   {
     "id": "6",
-    "name": "Sunway Event",
-    "year": "2023",
-    "description": "Performed in a band at an internal Sunway event.",
+    "name": "TARUMT Aloha Fest",
+    "year": "2024",
+    "description": "Live band vocalist at the TARUMT Aloha Festival.",
     "role": "Singer"
   },
   {
     "id": "7",
-    "name": "TARUMT Aloha Fest",
+    "name": "Leo Club Banquet Night",
     "year": "2024",
-    "description": "Performed as a vocalist with a live band at the Aloha Festival hosted by TARUMT.",
+    "description": "Performed at the Leo Club's formal banquet.",
     "role": "Singer"
   },
   {
     "id": "8",
-    "name": "Leo Club Banquet Dinner",
+    "name": "Sunway SOA Level Up Event",
     "year": "2024",
-    "description": "Sang with a band during the formal banquet hosted by the Leo Club.",
+    "description": "Lead singer for the School of Arts graduation event.",
     "role": "Singer"
   },
   {
     "id": "9",
-    "name": "Sunway SOA Level Up Event",
+    "name": "APU Event",
     "year": "2024",
-    "description": "Performed as the lead vocalist in a band during a celebration event for graduating students from the School of Arts.",
+    "description": "Sang with a band at Asia Pacific University’s event.",
     "role": "Singer"
   },
   {
     "id": "10",
-    "name": "APU Event",
-    "year": "2024",
-    "description": "Joined a band performance at an official event held by Asia Pacific University.",
-    "role": "Singer"
-  },
-  {
-    "id": "11",
     "name": "Taylor's University Event",
     "year": "2024",
-    "description": "Contributed as the band’s lead singer during a performance at Taylor's campus event.",
+    "description": "Performed as lead singer at Taylor’s campus event.",
     "role": "Singer"
   }
   ]
