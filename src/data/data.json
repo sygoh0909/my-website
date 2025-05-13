@@ -104,7 +104,7 @@
       "name": "Residential Management Website",
       "description": "A platform designed to help users monitor and manage tenant payments with ease. The system allows users to track missed payments, generate receipts for completed transactions, and produce detailed reports highlighting outstanding dues—ensuring efficient and transparent payment management for residential communities.",
       "skills": "Express.js, Next.js, PostgreSQL, Tailwind CSS",
-      "link": ""
+      "link": "https://github.com/sygoh0909/indah13-residentsManagement"
     }
   ]
 }
