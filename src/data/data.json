@@ -27,7 +27,8 @@
     { "id": "3", "name": "Microsoft Office", "icon": "FaPaintBrush" },
     { "id": "4", "name": "Visual Studio Code", "icon": "FaCode" },
     { "id": "5", "name": "IntelliJ", "icon": "FaCode" },
-    { "id": "6", "name": "PHPStorm", "icon": "FaCode" }
+    { "id": "6", "name": "PHPStorm", "icon": "FaCode" },
+    { "id": "7", "name": "PyCharm", "icon": "FaCode" }
   ],
   "otherSkills": [
     { "id": "1", "name": "UML Diagrams", "icon": "FaProjectDiagram" },
