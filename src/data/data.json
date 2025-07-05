@@ -37,10 +37,10 @@
   "education": [
     {
       "id": "1",
-      "name": "Bachelor of Software Engineering",
-      "year": "2023-Present",
-      "description": "Sunway University",
-      "achievement": "Dean's List Award"
+      "name": "Foundation in Arts",
+      "year": "2022-2023",
+      "description": "Sunway College",
+      "achievement": "CGPA: 3.98"
     },
     {
       "id": "2",
@@ -51,10 +51,17 @@
     },
     {
       "id": "3",
-      "name": "Foundation in Arts",
-      "year": "2022-2023",
-      "description": "Sunway College",
-      "achievement": "CGPA: 3.98"
+      "name": "Bachelor of Software Engineering",
+      "year": "2023-Present",
+      "description": "Sunway University",
+      "achievement": "Dean's List Award"
+    },
+    {
+      "id": "4",
+      "name": "IBM TechXchange Hackathon 2025 ",
+      "year": "2025",
+      "description": "Collaborated with a team of 4 members",
+      "achievement": "Build an AI-powered legal analysis to simplify compliance"
     }
   ],
   "projects": [
@@ -106,6 +113,13 @@
       "description": "A platform designed to help users monitor and manage tenant payments with ease. The system allows users to track missed payments, generate receipts for completed transactions, and produce detailed reports highlighting outstanding dues—ensuring efficient and transparent payment management for residential communities.",
       "skills": "Express.js, Next.js, PostgreSQL, Tailwind CSS",
       "link": "https://github.com/sygoh0909/indah13-residentsManagement"
+    },
+    {
+      "id": "8",
+      "name": "Legal Guard RegTech",
+      "description": "AI-powered legal analysis to simplify compliance. This tool transforms complex documents into plain English, assesses risks, and checks against regulations like GDPR & PDPA.",
+      "skills": "React.js, Python, FastAPI, IBM WatsonX",
+      "link": "https://github.com/nathangtg/legal-guard-regtech"
     }
   ],
   "otherExperiences":[
