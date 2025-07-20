@@ -3,28 +3,35 @@
     { "id": "1", "name": "Java", "icon": "FaJava" },
     { "id": "2", "name": "Python", "icon": "FaPython" },
     { "id": "3", "name": "PHP", "icon": "FaPhp" },
-    { "id": "4", "name": "JavaScript", "icon": "SiJavascript" }
+    { "id": "4", "name": "JavaScript", "icon": "SiJavascript" },
+    { "id": "5", "name": "TypeScript", "icon": "SiTypescript" },
+    { "id": "6", "name": "Shell Scripting", "icon": "FaTerminal" }
   ],
   "frameworks": [
     { "id": "1", "name": "HTML", "icon": "FaHtml5" },
     { "id": "2", "name": "CSS", "icon": "SiCss3" },
-    { "id": "3", "name": "Next.js", "icon": "SiNextdotjs" },
-    { "id": "4", "name": "Node.js", "icon": "FaNode" },
-    { "id": "5", "name": "Express.js", "icon": "SiExpress" },
-    { "id": "6", "name": "Tailwind CSS", "icon": "SiTailwindcss" }
+    { "id": "3", "name": "React.js", "icon": "FaReact" },
+    { "id": "4", "name": "Next.js", "icon": "SiNextdotjs" },
+    { "id": "5", "name": "Tailwind CSS", "icon": "SiTailwindcss" },
+    { "id": "6", "name": "Node.js", "icon": "FaNodeJs" },
+    { "id": "7", "name": "Express.js", "icon": "SiExpress" },
+    { "id": "8", "name": "Axios", "icon": "SiAxios" },
+    { "id": "9", "name": "Fetch API", "icon": "FaNetworkWired" }
   ],
   "databases": [
     { "id": "1", "name": "SQL", "icon": "FaDatabase" },
-    { "id": "2", "name": "PostgreSQL", "icon": "FaDatabase" },
-    { "id": "3", "name": "Sequelize", "icon": "FaDatabase" },
-    { "id": "4", "name": "Git", "icon": "FaGit" },
-    { "id": "5", "name": "GitHub", "icon": "FaGithub" },
-    { "id": "6", "name": "Vercel", "icon": "SiVercel" }
+    { "id": "2", "name": "PostgreSQL", "icon": "SiPostgresql" },
+    { "id": "3", "name": "Sequelize ORM", "icon": "SiSequelize" },
+    { "id": "4", "name": "XAMPP", "icon": "FaServer" },
+    { "id": "5", "name": "NeonDB", "icon": "FaCloud" },
+    { "id": "6", "name": "Git", "icon": "FaGit" },
+    { "id": "7", "name": "GitHub", "icon": "FaGithub" },
+    { "id": "8", "name": "Vercel", "icon": "SiVercel" }
   ],
   "platforms": [
     { "id": "1", "name": "Figma", "icon": "FaFigma" },
     { "id": "2", "name": "Canva", "icon": "FaPaintBrush" },
-    { "id": "3", "name": "Microsoft Office", "icon": "FaPaintBrush" },
+    { "id": "3", "name": "Microsoft Office", "icon": "FaFileWord" },
     { "id": "4", "name": "Visual Studio Code", "icon": "FaCode" },
     { "id": "5", "name": "IntelliJ", "icon": "FaCode" },
     { "id": "6", "name": "PHPStorm", "icon": "FaCode" },
@@ -32,7 +39,15 @@
   ],
   "otherSkills": [
     { "id": "1", "name": "UML Diagrams", "icon": "FaProjectDiagram" },
-    { "id": "2", "name": "Flowcharts", "icon": "FaProjectDiagram" }
+    { "id": "2", "name": "Flowcharts", "icon": "FaProjectDiagram" },
+    { "id": "3", "name": "JWT Authentication", "icon": "FaKey" },
+    { "id": "4", "name": "REST API Integration", "icon": "FaExchangeAlt" },
+    { "id": "5", "name": "ERD (Entity Relationship Diagram)", "icon": "FaSitemap" },
+    { "id": "6", "name": "Version Control Workflows", "icon": "FaCodeBranch" },
+    { "id": "7", "name": "Debugging & Troubleshooting", "icon": "FaBug" },
+    { "id": "8", "name": "Responsive Design", "icon": "FaMobileAlt" },
+    { "id": "9", "name": "Command Line Interface (CLI)", "icon": "FaTerminal" },
+    { "id": "10", "name": "SDLC & Agile", "icon": "FaTasks" }
   ],
   "education": [
     {
