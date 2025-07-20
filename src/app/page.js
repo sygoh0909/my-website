@@ -31,7 +31,7 @@ const scaleHover = {
   transition: { duration: 0.3 }
 };
 
-const Icons = { ...FaIcons, ...SiIcons };
+const Icons = { ...FaIcons, ...SiIcons }; // This correctly combines all icons from both libraries
 
 const categoryTitles = {
   languages: "Programming Languages",
@@ -143,6 +143,7 @@ export default function Main() {
   const [otherExperiences, setOtherExperiences] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeDemo, setActiveDemo] = useState(null); // State for managing the active demo video
 
   useEffect(() => {
     fetchData()
@@ -246,8 +247,8 @@ export default function Main() {
               </motion.p>
 
               <motion.div
-              className="mt-8" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-block bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300">View My Resume<Icons.FaDownload className="inline ml-2 text-sm" /></a>
+                className="mt-8" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-block bg-purple-700 hover:bg-purple-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300">View My Resume<Icons.FaDownload className="inline ml-2 text-sm" /></a>
               </motion.div>
 
             </motion.div>
@@ -325,7 +326,7 @@ export default function Main() {
           </motion.div>
         </section>
 
-          {/* Experience Section */}
+        {/* Experience Section */}
         <section id="education" className="py-20">
           <motion.div
             initial="hidden"
@@ -385,69 +386,112 @@ export default function Main() {
         {/* Projects Section */}
         <section id="projects" className="py-20">
           <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
           >
-          <motion.h2
-          className="text-4xl font-bold mb-16 text-center"
-          variants={fadeIn}
-          >
-            Featured <span className="text-purple-300">Projects</span>
-          </motion.h2>
-          <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-8 max-w-7xl mx-auto px-6"
-          variants={staggerContainer}
-          >
-            {projects.map((project) => (
+            <motion.h2
+              className="text-4xl font-bold mb-16 text-center"
+              variants={fadeIn}
+            >
+              Featured <span className="text-purple-300">Projects</span>
+            </motion.h2>
             <motion.div
-              key={project.id}
-              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#1A1A40] to-[#1E3163] shadow-lg"
-              variants={itemFadeIn}
-              whileHover="hover"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              >
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-purple-300 mb-2">{project.name}</h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.skills.map((skill, index) => (
-                    <span
-                    key={index}
-                    className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded-full"
-                    >
-                    {skill}
-                    </span>
-                  ))}
-                </div>
-                <motion.div className="mt-auto">
-                  <motion.a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-2 rounded-lg max-w-[200px] w-full mx-auto group-hover:from-purple-700 group-hover:to-purple-800 transition-all duration-300"
-                  whileHover={{
-                    scale: 1.03,
-                    boxShadow: "0 10px 25px -5px rgba(126, 34, 206, 0.4)"
-                  }}
-                  whileTap={{ scale: 0.98 }}
-                  >
-                    View Project
-                  <Icons.FaExternalLinkAlt className="ml-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity" />
-                  </motion.a>
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-8 max-w-7xl mx-auto px-6"
+              variants={staggerContainer}
+            >
+              {projects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#1A1A40] to-[#1E3163] shadow-lg flex flex-col"
+                  variants={itemFadeIn}
+                  whileHover="hover"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <div className="p-6 flex-grow">
+                    <h3 className="text-2xl font-bold text-purple-300 mb-2">{project.name}</h3>
+                    <p className="text-gray-300 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.skills.map((skill, index) => (
+                        <span
+                          key={index}
+                          className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded-full"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Changed justify-center to justify-start for left alignment */}
+                  <motion.div className="mt-auto p-6 pt-0 flex flex-col sm:flex-row gap-4 justify-start">
+                    {project.link && (
+                      <motion.a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-2 rounded-lg w-full sm:w-auto group-hover:from-purple-700 group-hover:to-purple-800 transition-all duration-300"
+                        whileHover={{
+                          scale: 1.03,
+                          boxShadow: "0 10px 25px -5px rgba(126, 34, 206, 0.4)"
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        View Project
+                        <Icons.FaExternalLinkAlt className="ml-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity" />
+                      </motion.a>
+                    )}
+                    {project.demo && (
+                      <motion.button
+                        onClick={() => setActiveDemo(project.demo)}
+                        className="inline-flex items-center justify-center bg-purple-800 hover:bg-purple-900 text-white px-6 py-2 rounded-lg w-full sm:w-auto transition-all duration-300"
+                        whileHover={{
+                          scale: 1.03,
+                          boxShadow: "0 10px 25px -5px rgba(126, 34, 206, 0.4)"
+                        }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <Icons.FaPlay className="mr-2" />
+                        Watch Demo
+                      </motion.button>
+                    )}
+                  </motion.div>
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-purple-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    initial={{ opacity: 0 }}
+                  />
                 </motion.div>
-              </div>
-              <motion.div
-              className="absolute inset-0 bg-gradient-to-t from-purple-900/30 via-purple-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-              initial={{ opacity: 0 }}
-              />
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
-        </motion.div>
+          </motion.div>
         </section>
+
+        {activeDemo && (
+          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 sm:p-8">
+            <div className="bg-[#1a1a1a] rounded-lg shadow-xl overflow-hidden max-w-4xl lg:max-w-6xl xl:max-w-7xl w-full relative">
+              <button
+                onClick={() => setActiveDemo(null)}
+                className="absolute top-3 right-3 text-white text-xl hover:text-red-400 z-10"
+              >
+                &times;
+              </button>
+              <div className="relative pt-[56.25%]"> {/* This creates the 16:9 aspect ratio container */}
+                <iframe
+                  src={activeDemo}
+                  title="Project Demo"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+      )}
+
+
+        {/* Other Experiences Section */}
         <section id="other-experiences" className="py-20">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
             <motion.h2
