@@ -5,7 +5,8 @@
     { "id": "3", "name": "PHP", "icon": "FaPhp" },
     { "id": "4", "name": "JavaScript", "icon": "SiJavascript" },
     { "id": "5", "name": "TypeScript", "icon": "SiTypescript" },
-    { "id": "6", "name": "Shell Scripting", "icon": "FaTerminal" }
+    { "id": "6", "name": "Shell Scripting", "icon": "FaTerminal" },
+    { "id": "7", "name": "Scala", "icon": "SiScala" }
   ],
   "frameworks": [
     { "id": "1", "name": "HTML", "icon": "FaHtml5" },
@@ -147,7 +148,7 @@
     {
       "id": "9",
       "name": "Nutri Farm",
-      "description": "A GUI-based farming simulation game built with modern JVM technologies",
+      "description": "Nutri-Farm is an educational farming game built with ScalaFX that teaches players about nutrition through interactive gameplay. Players grow and harvest crops, manage their inventory, and use a drag-and-drop meal builder to create balanced meals, earning points based on nutritional value. Backed by a PostgreSQL database with Slick ORM and secure login, the game combines farming simulation with nutrition awareness, encouraging players to make healthier food choices in a fun and engaging way.",
       "skills": "ScalaFX, PostgreSQL, CSS",
       "link": "https://github.com/sygoh0909/Nutri-Farm.git",
       "demo": "https://youtu.be/embed/x1Buxhz8wgo"
