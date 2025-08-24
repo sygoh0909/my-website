@@ -143,6 +143,14 @@
       "skills": "React.js, Python, FastAPI, IBM WatsonX",
       "link": "https://github.com/nathangtg/legal-guard-regtech",
       "demo": ""
+    },
+    {
+      "id": "9",
+      "name": "Nutri Farm",
+      "description": "A GUI-based farming simulation game built with modern JVM technologies",
+      "skills": "ScalaFX, PostgreSQL, CSS",
+      "link": "https://github.com/sygoh0909/Nutri-Farm.git",
+      "demo": "https://www.youtube.com/watch?v=x1Buxhz8wgo"
     }
   ],
   "otherExperiences":[
