@@ -145,7 +145,7 @@
     {
       "id": "8",
       "name": "Legal Guard RegTech",
-      "description": "An AI-powered tool that simplifies legal documents into plain English and checks compliance with regulations like GDPR and PDPA. I contributed as the frontend developer, designing and implementing the user interface—using React, Next.js, and Tailwind CSS. Working in a team of four, we delivered a responsive and user-friendly platform under tight deadlines.",
+      "description": "An AI-powered tool that simplifies legal documents into plain English and checks compliance with regulations like GDPR and PDPA. I contributed as the frontend developer, building and testing the user interface with React, Tailwind CSS, and TypeScript. Collaborating in a team of four, we delivered a responsive and user-friendly platform under tight hackathon deadlines.",
       "skills": "React.js, Python, FastAPI, IBM WatsonX",
       "link": "https://github.com/nathangtg/legal-guard-regtech",
       "demo": ""
