@@ -41,11 +41,12 @@
     { "id": "1", "name": "UML Diagrams", "icon": "FaProjectDiagram" },
     { "id": "2", "name": "JWT Authentication", "icon": "FaKey" },
     { "id": "3", "name": "REST API Integration", "icon": "FaExchangeAlt" },
-    { "id": "4", "name": "Version Control Workflows", "icon": "FaCodeBranch" },
+    { "id": "4", "name": "CI/CD (GitHub Actions, Railway, Vercel)", "icon": "FaCogs" },
     { "id": "5", "name": "Debugging & Troubleshooting", "icon": "FaBug" },
     { "id": "6", "name": "SDLC & Agile", "icon": "FaTasks" },
     { "id": "7", "name": "Requirement Engineering", "icon": "FaClipboardList" },
-    { "id": "8", "name": "Software Project Management", "icon": "FaProjectDiagram" }
+    { "id": "8", "name": "Software Project Management", "icon": "FaProjectDiagram" },
+    { "id": "9", "name": "Workflow Automation (n8n)", "icon": "FaProjectDiagram" }
   ],
   "education": [
     {
@@ -57,24 +58,31 @@
     },
     {
       "id": "2",
-      "name": "Committee Member - Public Relation Department",
-      "year": "2023-2024",
-      "description": "Sunway Music Society",
-      "achievement": "Host and promote events (e.g. Open Mic, Jam Sessions)"
-    },
-    {
-      "id": "3",
       "name": "Bachelor of Software Engineering",
       "year": "2023-Present",
       "description": "Sunway University",
       "achievement": "Dean's List Award"
     },
     {
+      "id": "3",
+      "name": "Committee Member - Public Relation Department",
+      "year": "2023-2024",
+      "description": "Sunway Music Society",
+      "achievement": ""
+    },
+    {
       "id": "4",
       "name": "IBM TechXchange Hackathon 2025 ",
       "year": "2025",
       "description": "Collaborated with a team of 4 members",
-      "achievement": "Build an AI-powered legal analysis to simplify compliance"
+      "achievement": ""
+    },
+    {
+      "id": "5",
+      "name": "The L’Oréal MYSG x Monash Datathon 2025",
+      "year": "2025",
+      "description": "Collaborated with a team of 2 to design an AI-powered trend analyzer for beauty and lifestyle insights.",
+      "achievement": ""
     }
   ],
   "projects": [
@@ -149,6 +157,22 @@
       "skills": "ScalaFX, PostgreSQL, CSS",
       "link": "https://github.com/sygoh0909/Nutri-Farm.git",
       "demo": "https://www.youtube.com/embed/x1Buxhz8wgo"
+    },
+    {
+      "id": "10",
+      "name": "Resume Analyzer",
+      "description": "Resume Analyzer is an AI-powered web app that scans resumes against job descriptions and highlights strengths, weaknesses, and missing skills. Built with Next.js and integrated with OpenAI APIs, it provides tailored feedback for job seekers to optimize their resumes for better matching.",
+      "skills": "Next.js, OpenAI API, Tailwind CSS",
+      "link": "https://github.com/sygoh0909/ResumeAnalyzer",
+      "demo": ""
+    },
+    {
+      "id": "11",
+      "name": "Trend Analyzer",
+      "description": "Developed during L'Oréal Datathon 2025, Trend Analyzer is an AI-driven system that processes video datasets (e.g., YouTube CSV exports) to detect emerging, stable, or decaying trends based on tags, keywords, and metadata. Using Next.js for the frontend and n8n for workflow automation, it provides actionable insights to help brands and creators act on trends before they peak.",
+      "skills": "Next.js, n8n, Node.js, CSV Data Processing",
+      "link": "https://github.com/sygoh0909/Trend-Analyzer",
+      "demo": ""
     }
   ],
   "otherExperiences":[
