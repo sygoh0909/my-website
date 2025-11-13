@@ -73,7 +73,7 @@ const Header = ({ menuOpen, setMenuOpen }) => (
       <div className="flex gap-4 text-xl">
         {[
           { icon: 'FaGithub', url: 'https://github.com/sygoh0909' },
-          { icon: 'FaLinkedin', url: 'https://www.linkedin.com/in/shu-yi-goh' },
+          { icon: 'FaLinkedin', url: 'https://www.linkedin.com/in/shu-yi-goh-384021346/' },
           { icon: 'FaInstagram', url: 'https://www.instagram.com/shu_yi_0909' }
         ].map((social) => {
           const Icon = Icons[social.icon];
