@@ -99,7 +99,7 @@
       "description": "A group assignment for the Object-Oriented Programming Fundamentals subject, involving 4 members, where we developed a text-based turn-based battle game inspired by Pokémon using Java. The project focused on implementing OOP principles such as inheritance and encapsulation. My role included designing class structures and implementing battle mechanics.",
       "skills": "Java",
       "link": "https://github.com/sygoh0909/Pokemon-Game",
-      "demo": "https://www.youtube.com/watch?v=hUB4YY_DN_A"
+      "demo": "https://www.youtube.com/embed/hUB4YY_DN_A?si=dFj6OrgYokU6qmik"
     },
     {
       "id": "3",
@@ -115,7 +115,7 @@
       "description": "A Web Programming subject teamwork assignment focused on addressing SDG 2 (Zero Hunger) through a PHP-based website. The platform includes features such as an event registration system and a donation page to support food aid initiatives. Additionally, it has an admin panel for managing users, events, and donations. The project incorporated user authentication, data management, and responsive design using PHP, HTML, CSS, and JavaScript. My role included back-end development with PHP, designing UI mockups in Figma, and implementing key functionalities for the event, donation and admin systems.",
       "skills": "PHP, HTML, CSS, JavaScript, Figma",
       "link": "https://github.com/sygoh0909/Food-Fox-Website",
-      "demo": "https://www.youtube.com/embed/KuKQDQMYxDI?si=QXsTIiSjajnDS6zv"
+      "demo": ""
     },
     {
       "id": "5",
