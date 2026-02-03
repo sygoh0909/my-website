@@ -45,7 +45,9 @@
     { "id": "5", "name": "Debugging & Troubleshooting", "icon": "FaBug" },
     { "id": "6", "name": "SDLC & Agile", "icon": "FaTasks" },
     { "id": "7", "name": "Requirement Engineering", "icon": "FaClipboardList" },
-    { "id": "8", "name": "Software Project Management", "icon": "FaProjectDiagram" }
+    { "id": "8", "name": "Software Project Management", "icon": "FaProjectDiagram" },
+    { "id": "9", "name": "Software Testing", "icon": "FaVial" },
+    { "id": "10", "name": "Software Evolution and Maintenance", "icon": "FaRedo" }
   ],
   "education": [
     {
@@ -81,6 +83,13 @@
       "name": "The L’Oréal MYSG x Monash Datathon 2025",
       "year": "2025",
       "description": "Collaborated with a team of 2 to design an AI-powered trend analyzer for beauty and lifestyle insights.",
+      "achievement": ""
+    },
+    {
+      "id": "6",
+      "name": "Web Designer Intern at BrandSwift",
+      "year": "2026",
+      "description": "",
       "achievement": ""
     }
   ],
@@ -171,6 +180,13 @@
       "description": "Developed during L'Oréal Datathon 2025, Trend Analyzer is an AI-driven system that processes video datasets (e.g., YouTube CSV exports) to detect emerging, stable, or decaying trends based on tags, keywords, and metadata. Using Next.js and workflow automation, it provides actionable insights to help brands and creators act on trends before they peak.",
       "skills": "Next.js, Node.js, CSV Data Processing",
       "link": "https://github.com/sygoh0909/Trend-Analyzer",
+      "demo": ""
+    },
+    {
+      "id": "12",
+      "name": "Dressify",
+      "description": "Final Year Project – completed research phase",
+      "link": "",
       "demo": ""
     }
   ],
