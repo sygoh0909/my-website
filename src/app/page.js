@@ -305,7 +305,7 @@ const ExperienceSection = ({ education }) => (
   </section>
 );
 
-const ProjectsSection = ({ projects, setActiveDemo }) => (
+const ProjectsSection = ({ projects = [], setActiveDemo }) => (
   <section id="projects" className="py-20">
     <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
       <motion.h2
@@ -314,66 +314,70 @@ const ProjectsSection = ({ projects, setActiveDemo }) => (
       >
         Featured <span className="text-purple-300">Projects</span>
       </motion.h2>
+
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         variants={staggerContainer}
       >
-        {projects.map((project) => (
-          <motion.div
-            key={project.id}
-            className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#1A1A40] to-[#1E3163] shadow-lg flex flex-col h-full"
-            variants={itemFadeIn}
-            whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(126, 34, 206, 0.4)" }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-          >
-            {/* You can add project images/videos back here if you have them */}
-            {/* For example:
-            <div className="w-full h-48 overflow-hidden">
-                <img src={project.image} alt={project.name} className="w-full h-full object-cover" />
-            </div>
-            */}
-            <div className="p-6 flex-grow">
-              <h3 className="text-2xl font-bold text-purple-300 mb-2">{project.name}</h3>
-              <p className="text-gray-300 mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded-full font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
+        {projects.length > 0 ? (
+          projects.map((project) => (
+            <motion.div
+              key={project.id}
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-[#1A1A40] to-[#1E3163] shadow-lg flex flex-col h-full"
+              variants={itemFadeIn}
+              whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(126, 34, 206, 0.4)" }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {/* Project content */}
+              <div className="p-6 flex-grow">
+                <h3 className="text-2xl font-bold text-purple-300 mb-2">{project.name}</h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {(project.skills || []).map((skill, index) => (
+                    <span
+                      key={index}
+                      className="text-xs bg-purple-900/50 text-purple-300 px-2 py-1 rounded-full font-medium"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
-            <motion.div className="mt-auto p-6 pt-0 flex flex-wrap gap-4 justify-start">
-              {project.link && (
-                <motion.a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-2 rounded-lg w-full sm:w-auto hover:from-purple-700 hover:to-purple-800 transition-all duration-300"
-                  whileTap={{ scale: 0.98 }}
-                >
-                  View Project
-                  <Icons.FaExternalLinkAlt className="ml-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity" />
-                </motion.a>
-              )}
-              {project.demo && (
-                <motion.button
-                  onClick={() => setActiveDemo(project.demo)}
-                  className="inline-flex items-center justify-center bg-purple-800 hover:bg-purple-900 text-white px-6 py-2 rounded-lg w-full sm:w-auto transition-all duration-300"
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <Icons.FaPlay className="mr-2" />
-                  Watch Demo
-                </motion.button>
-              )}
+
+              {/* Links / Demo buttons */}
+              <motion.div className="mt-auto p-6 pt-0 flex flex-wrap gap-4 justify-start">
+                {project.link && (
+                  <motion.a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-gradient-to-r from-purple-600 to-purple-700 text-white px-6 py-2 rounded-lg w-full sm:w-auto hover:from-purple-700 hover:to-purple-800 transition-all duration-300"
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    View Project
+                    <Icons.FaExternalLinkAlt className="ml-2 text-sm opacity-70 group-hover:opacity-100 transition-opacity" />
+                  </motion.a>
+                )}
+                {project.demo && (
+                  <motion.button
+                    onClick={() => setActiveDemo(project.demo)}
+                    className="inline-flex items-center justify-center bg-purple-800 hover:bg-purple-900 text-white px-6 py-2 rounded-lg w-full sm:w-auto transition-all duration-300"
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <Icons.FaPlay className="mr-2" />
+                    Watch Demo
+                  </motion.button>
+                )}
+              </motion.div>
             </motion.div>
-          </motion.div>
-        ))}
+          ))
+        ) : (
+          <p className="text-center text-gray-400 col-span-full">
+            No projects available.
+          </p>
+        )}
       </motion.div>
     </motion.div>
   </section>
