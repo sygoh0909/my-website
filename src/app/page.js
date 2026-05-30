@@ -169,7 +169,7 @@ const SectionLabel = ({ children }) => (
 // ─── Hero / About ─────────────────────────────────────────────────────────────
 
 const AboutSection = () => (
-  <section id="about" className="relative pt-36 pb-28 min-h-screen flex items-center">
+  <section id="about" className="relative pt-36 pb-28 flex items-center">
     {/* Background orbs */}
     <div className="absolute top-20 right-0 w-[600px] h-[600px] rounded-full bg-purple-900/20 blur-[120px] pointer-events-none" />
     <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-indigo-900/15 blur-[100px] pointer-events-none" />
