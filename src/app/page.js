@@ -562,16 +562,10 @@ const OtherExperiencesSection = ({ otherExperiences }) => (
 // ─── Footer ───────────────────────────────────────────────────────────────────
 
 const Footer = () => (
-  <footer className="border-t border-purple-900/30 py-12 mt-8">
-    <div className="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
-      <div className="text-center sm:text-left">
-        <div className="text-lg font-bold tracking-widest font-['Poppins'] text-white">
-          Shu<span className="text-purple-400"> Yi</span>
-        </div>
-        <p className="text-xs text-gray-600 mt-1">Software Engineering Student · Sunway University</p>
-      </div>
-
-      <div className="flex gap-5 text-lg text-gray-500">
+  <footer className="border-t border-purple-900/30 py-5 mt-4">
+    <div className="max-w-7xl mx-auto px-6 sm:px-12 flex items-center justify-between">
+      <p className="text-xs text-gray-700">© {new Date().getFullYear()} Shu Yi</p>
+      <div className="flex gap-4 text-base text-gray-500">
         {[
           { icon: "FaGithub", url: "https://github.com/sygoh0909" },
           { icon: "FaLinkedin", url: "https://www.linkedin.com/in/shu-yi-goh-384021346/" },
@@ -579,22 +573,12 @@ const Footer = () => (
         ].map(({ icon, url }) => {
           const Icon = Icons[icon];
           return (
-            <a
-              key={icon}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-purple-400 transition-colors hover:-translate-y-0.5 inline-block"
-            >
+            <a key={icon} href={url} target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
               <Icon />
             </a>
           );
         })}
       </div>
-
-      <p className="text-xs text-gray-700">
-        © {new Date().getFullYear()} Shu Yi. Built with Next.js
-      </p>
     </div>
   </footer>
 );

@@ -5,8 +5,7 @@
     { "id": "3", "name": "PHP", "icon": "FaPhp" },
     { "id": "4", "name": "JavaScript", "icon": "SiJavascript" },
     { "id": "5", "name": "TypeScript", "icon": "SiTypescript" },
-    { "id": "6", "name": "Shell Scripting", "icon": "FaTerminal" },
-    { "id": "7", "name": "Scala", "icon": "SiScala" }
+    { "id": "6", "name": "Scala", "icon": "SiScala" }
   ],
   "frameworks": [
     { "id": "1", "name": "HTML", "icon": "FaHtml5" },
@@ -19,19 +18,20 @@
     { "id": "8", "name": "React Native", "icon": "SiReactos" },
     { "id": "9", "name": "Flutter", "icon": "SiFlutter" },
     { "id": "10", "name": "Expo", "icon": "SiExpo" },
-    { "id": "11", "name": "FastAPI", "icon": "SiFastapi" }
+    { "id": "11", "name": "FastAPI", "icon": "SiFastapi" },
+    { "id": "12", "name": "n8n", "icon": "SiN8N" }
   ],
   "databases": [
     { "id": "1", "name": "SQL", "icon": "FaDatabase" },
     { "id": "2", "name": "PostgreSQL", "icon": "SiPostgresql" },
     { "id": "3", "name": "Sequelize ORM", "icon": "SiSequelize" },
-    { "id": "4", "name": "XAMPP", "icon": "FaServer" },
-    { "id": "5", "name": "NeonDB", "icon": "FaCloud" },
-    { "id": "6", "name": "Git", "icon": "FaGit" },
-    { "id": "7", "name": "GitHub", "icon": "FaGithub" },
-    { "id": "8", "name": "Vercel", "icon": "SiVercel" },
-    { "id": "9", "name": "Slick ORM", "icon": "FaDatabase" },
-    { "id": "10", "name": "Supabase", "icon": "SiSupabase" }
+    { "id": "4", "name": "NeonDB", "icon": "FaCloud" },
+    { "id": "5", "name": "Git", "icon": "FaGit" },
+    { "id": "6", "name": "GitHub", "icon": "FaGithub" },
+    { "id": "7", "name": "Vercel", "icon": "SiVercel" },
+    { "id": "8", "name": "Slick ORM", "icon": "FaDatabase" },
+    { "id": "9", "name": "Supabase", "icon": "SiSupabase" },
+    { "id": "10", "name": "Firebase", "icon": "SiFirebase" }
   ],
   "platforms": [
     { "id": "1", "name": "Figma", "icon": "FaFigma" },
@@ -40,7 +40,9 @@
     { "id": "4", "name": "Visual Studio Code", "icon": "FaCode" },
     { "id": "5", "name": "IntelliJ", "icon": "FaCode" },
     { "id": "6", "name": "PHPStorm", "icon": "FaCode" },
-    { "id": "7", "name": "PyCharm", "icon": "FaCode" }
+    { "id": "7", "name": "PyCharm", "icon": "FaCode" },
+    { "id": "8", "name": "WordPress", "icon": "SiWordpress" },
+    { "id": "9", "name": "Elementor", "icon": "SiElementor" }
   ],
   "otherSkills": [
     { "id": "1", "name": "UML Diagrams", "icon": "FaProjectDiagram" },
@@ -52,7 +54,9 @@
     { "id": "7", "name": "Requirement Engineering", "icon": "FaClipboardList" },
     { "id": "8", "name": "Software Project Management", "icon": "FaProjectDiagram" },
     { "id": "9", "name": "Software Testing", "icon": "FaVial" },
-    { "id": "10", "name": "Software Evolution and Maintenance", "icon": "FaRedo" }
+    { "id": "10", "name": "Software Evolution and Maintenance", "icon": "FaRedo" },
+    { "id": "11", "name": "OpenAI APIs", "icon": "SiOpenai" },
+    { "id": "12", "name": "Local AI Models (CLIP, ISNet, U2Net)", "icon": "FaBrain" }
   ],
   "education": [
     {
@@ -94,7 +98,7 @@
       "id": "6",
       "name": "Web Designer Intern at BrandSwift",
       "year": "2026",
-      "description": "",
+      "description": "3-month internship focused on designing and building websites for clients.",
       "achievement": ""
     }
   ],
@@ -191,6 +195,30 @@
       "id": "12",
       "name": "Dressify",
       "description": "Final Year Project – AI-powered smart wardrobe app that helps users organize their clothes, get outfit recommendations, and plan outfits using intelligent suggestions based on style and occasion.",
+      "link": "",
+      "demo": ""
+    },
+    {
+      "id": "13",
+      "name": "SplitBudget",
+      "description": "A Flutter mobile app for splitting expenses among groups during trips or shared events. Supports personal and shared expense books, multi-currency tracking across 30+ currencies, invite codes for group collaboration, and automatic debt-minimization settlement calculations. Backed by Firebase Auth and Cloud Firestore.",
+      "skills": "Flutter, Expo, Firebase, Dart",
+      "link": "",
+      "demo": ""
+    },
+    {
+      "id": "14",
+      "name": "Fanfolio",
+      "description": "A React mobile web app for K-pop and idol fans to create and curate digital memory scrapbooks. Features include a Memory Shelf with flippable books, a Card Maker for fan cards, activity logging, and a user profile — all stored locally. Supports bilingual UI (English / 中文) and canvas-based page editing.",
+      "skills": "React.js, Vite, Tailwind CSS, TypeScript",
+      "link": "",
+      "demo": ""
+    },
+    {
+      "id": "15",
+      "name": "Sunway eLearning AI Extension",
+      "description": "A Chrome MV3 extension for Sunway University's Blackboard eLearn platform. Scrapes enrolled course announcements and deadlines via the Blackboard REST API, then runs a fully local AI/NLP pipeline — TextRank summarisation, TF-IDF classification, and regex deadline extraction — to surface prioritised, searchable notifications. Includes a smart popup dashboard and injectable sidebar overlay.",
+      "skills": "React.js, TypeScript, Tailwind CSS, Vite, Chrome Extensions",
       "link": "",
       "demo": ""
     }
