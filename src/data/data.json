@@ -192,6 +192,7 @@
       "id": "12",
       "name": "Dressify",
       "description": "Final Year Project – AI-powered smart wardrobe app that helps users organize their clothes, get outfit recommendations, and plan outfits using intelligent suggestions based on style and occasion.",
+      "skills": "React Native, FastAPI, Python",
       "link": "",
       "demo": ""
     },
@@ -207,7 +208,7 @@
       "id": "14",
       "name": "Fanfolio",
       "description": "A React mobile web app for K-pop and idol fans to create and curate digital memory scrapbooks. Features include a Memory Shelf with flippable books, a Card Maker for fan cards, activity logging, and a user profile — all stored locally. Supports bilingual UI (English / 中文) and canvas-based page editing.",
-      "skills": "React.js, Vite, Tailwind CSS, TypeScript",
+      "skills": "React.js, Tailwind CSS, TypeScript",
       "link": "",
       "demo": ""
     },
@@ -215,7 +216,7 @@
       "id": "15",
       "name": "Sunway eLearning AI Extension",
       "description": "A Chrome MV3 extension for Sunway University's Blackboard eLearn platform. Scrapes enrolled course announcements and deadlines via the Blackboard REST API, then runs a fully local AI/NLP pipeline — TextRank summarisation, TF-IDF classification, and regex deadline extraction — to surface prioritised, searchable notifications. Includes a smart popup dashboard and injectable sidebar overlay.",
-      "skills": "React.js, TypeScript, Tailwind CSS, Vite, Chrome Extensions",
+      "skills": "React.js, TypeScript, Tailwind CSS, Chrome Extensions",
       "link": "",
       "demo": ""
     }
