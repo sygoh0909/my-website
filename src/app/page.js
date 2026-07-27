@@ -425,7 +425,7 @@ const ProjectCard = ({ project, setActiveDemo, featured }) => (
       )}
 
       <h3 className="text-lg font-bold text-white mb-2 leading-snug">{project.name}</h3>
-      <p className="text-sm text-gray-400 leading-relaxed flex-1 mb-5">{project.description}</p>
+      <p className="text-sm text-gray-400 leading-relaxed mb-5">{project.description}</p>
 
       {/* Skill tags */}
       <div className="flex flex-wrap gap-1.5 mb-6">
@@ -435,7 +435,7 @@ const ProjectCard = ({ project, setActiveDemo, featured }) => (
       </div>
 
       {/* Actions */}
-      <div className="flex flex-wrap gap-3 mt-auto">
+      <div className="flex flex-wrap gap-3">
         {project.link && (
           <a
             href={project.link}
