@@ -1,59 +1,243 @@
 {
   "languages": [
-    { "id": "1", "name": "Java", "icon": "FaJava" },
-    { "id": "2", "name": "Python", "icon": "FaPython" },
-    { "id": "3", "name": "PHP", "icon": "FaPhp" },
-    { "id": "4", "name": "JavaScript", "icon": "SiJavascript" },
-    { "id": "5", "name": "TypeScript", "icon": "SiTypescript" },
-    { "id": "6", "name": "Scala", "icon": "SiScala" }
+    {
+      "id": "1",
+      "name": "Java",
+      "icon": "FaJava"
+    },
+    {
+      "id": "2",
+      "name": "Python",
+      "icon": "FaPython"
+    },
+    {
+      "id": "3",
+      "name": "PHP",
+      "icon": "FaPhp"
+    },
+    {
+      "id": "4",
+      "name": "JavaScript",
+      "icon": "SiJavascript"
+    },
+    {
+      "id": "5",
+      "name": "TypeScript",
+      "icon": "SiTypescript"
+    },
+    {
+      "id": "6",
+      "name": "Scala",
+      "icon": "SiScala"
+    }
   ],
   "frameworks": [
-    { "id": "1", "name": "HTML", "icon": "FaHtml5" },
-    { "id": "2", "name": "CSS", "icon": "SiCss3" },
-    { "id": "3", "name": "React.js", "icon": "FaReact" },
-    { "id": "4", "name": "Next.js", "icon": "SiNextdotjs" },
-    { "id": "5", "name": "Tailwind CSS", "icon": "SiTailwindcss" },
-    { "id": "6", "name": "Node.js", "icon": "FaNodeJs" },
-    { "id": "7", "name": "Express.js", "icon": "SiExpress" },
-    { "id": "8", "name": "React Native", "icon": "SiReactos" },
-    { "id": "9", "name": "Flutter", "icon": "SiFlutter" },
-    { "id": "10", "name": "Expo", "icon": "SiExpo" },
-    { "id": "11", "name": "FastAPI", "icon": "SiFastapi" },
-    { "id": "12", "name": "n8n", "icon": "SiN8N" }
+    {
+      "id": "1",
+      "name": "HTML",
+      "icon": "FaHtml5"
+    },
+    {
+      "id": "2",
+      "name": "CSS",
+      "icon": "SiCss3"
+    },
+    {
+      "id": "3",
+      "name": "React.js",
+      "icon": "FaReact"
+    },
+    {
+      "id": "4",
+      "name": "Next.js",
+      "icon": "SiNextdotjs"
+    },
+    {
+      "id": "5",
+      "name": "Tailwind CSS",
+      "icon": "SiTailwindcss"
+    },
+    {
+      "id": "6",
+      "name": "Node.js",
+      "icon": "FaNodeJs"
+    },
+    {
+      "id": "7",
+      "name": "Express.js",
+      "icon": "SiExpress"
+    },
+    {
+      "id": "8",
+      "name": "React Native",
+      "icon": "SiReactos"
+    },
+    {
+      "id": "9",
+      "name": "Flutter",
+      "icon": "SiFlutter"
+    },
+    {
+      "id": "10",
+      "name": "Expo",
+      "icon": "SiExpo"
+    },
+    {
+      "id": "11",
+      "name": "FastAPI",
+      "icon": "SiFastapi"
+    },
+    {
+      "id": "12",
+      "name": "n8n",
+      "icon": "SiN8N"
+    }
   ],
   "databases": [
-    { "id": "1", "name": "SQL", "icon": "FaDatabase" },
-    { "id": "2", "name": "PostgreSQL", "icon": "SiPostgresql" },
-    { "id": "3", "name": "Sequelize ORM", "icon": "SiSequelize" },
-    { "id": "4", "name": "NeonDB", "icon": "FaCloud" },
-    { "id": "5", "name": "Git", "icon": "FaGit" },
-    { "id": "6", "name": "GitHub", "icon": "FaGithub" },
-    { "id": "7", "name": "Vercel", "icon": "SiVercel" },
-    { "id": "8", "name": "Slick ORM", "icon": "FaDatabase" },
-    { "id": "9", "name": "Supabase", "icon": "SiSupabase" },
-    { "id": "10", "name": "Firebase", "icon": "SiFirebase" }
+    {
+      "id": "1",
+      "name": "SQL",
+      "icon": "FaDatabase"
+    },
+    {
+      "id": "2",
+      "name": "PostgreSQL",
+      "icon": "SiPostgresql"
+    },
+    {
+      "id": "3",
+      "name": "Sequelize ORM",
+      "icon": "SiSequelize"
+    },
+    {
+      "id": "4",
+      "name": "NeonDB",
+      "icon": "FaCloud"
+    },
+    {
+      "id": "5",
+      "name": "Git",
+      "icon": "FaGit"
+    },
+    {
+      "id": "6",
+      "name": "GitHub",
+      "icon": "FaGithub"
+    },
+    {
+      "id": "7",
+      "name": "Vercel",
+      "icon": "SiVercel"
+    },
+    {
+      "id": "8",
+      "name": "Slick ORM",
+      "icon": "FaDatabase"
+    },
+    {
+      "id": "9",
+      "name": "Supabase",
+      "icon": "SiSupabase"
+    },
+    {
+      "id": "10",
+      "name": "Firebase",
+      "icon": "SiFirebase"
+    }
   ],
   "platforms": [
-    { "id": "1", "name": "Figma", "icon": "FaFigma" },
-    { "id": "2", "name": "Canva", "icon": "FaPaintBrush" },
-    { "id": "3", "name": "Microsoft Office", "icon": "FaFileWord" },
-    { "id": "4", "name": "WordPress", "icon": "SiWordpress" },
-    { "id": "5", "name": "Elementor", "icon": "SiElementor" },
-    { "id": "6", "name": "Draw.io", "icon": "SiDiagramsdotnet" }
+    {
+      "id": "1",
+      "name": "Figma",
+      "icon": "FaFigma"
+    },
+    {
+      "id": "2",
+      "name": "Canva",
+      "icon": "FaPaintBrush"
+    },
+    {
+      "id": "3",
+      "name": "Microsoft Office",
+      "icon": "FaFileWord"
+    },
+    {
+      "id": "4",
+      "name": "WordPress",
+      "icon": "SiWordpress"
+    },
+    {
+      "id": "5",
+      "name": "Elementor",
+      "icon": "SiElementor"
+    },
+    {
+      "id": "6",
+      "name": "Draw.io",
+      "icon": "SiDiagramsdotnet"
+    }
   ],
   "otherSkills": [
-    { "id": "1", "name": "UML Diagrams", "icon": "FaProjectDiagram" },
-    { "id": "2", "name": "JWT Authentication", "icon": "FaKey" },
-    { "id": "3", "name": "REST API Integration", "icon": "FaExchangeAlt" },
-    { "id": "4", "name": "CI/CD (GitHub Actions, Railway, Vercel)", "icon": "FaCogs" },
-    { "id": "5", "name": "Debugging & Troubleshooting", "icon": "FaBug" },
-    { "id": "6", "name": "SDLC & Agile", "icon": "FaTasks" },
-    { "id": "7", "name": "Requirement Engineering", "icon": "FaClipboardList" },
-    { "id": "8", "name": "Software Project Management", "icon": "FaProjectDiagram" },
-    { "id": "9", "name": "Software Testing", "icon": "FaVial" },
-    { "id": "10", "name": "Software Evolution and Maintenance", "icon": "FaRedo" },
-    { "id": "11", "name": "OpenAI APIs", "icon": "SiOpenai" },
-    { "id": "12", "name": "Local AI Models (CLIP, ISNet, U2Net)", "icon": "FaBrain" }
+    {
+      "id": "1",
+      "name": "UML Diagrams",
+      "icon": "FaProjectDiagram"
+    },
+    {
+      "id": "2",
+      "name": "JWT Authentication",
+      "icon": "FaKey"
+    },
+    {
+      "id": "3",
+      "name": "REST API Integration",
+      "icon": "FaExchangeAlt"
+    },
+    {
+      "id": "4",
+      "name": "CI/CD (GitHub Actions, Railway, Vercel)",
+      "icon": "FaCogs"
+    },
+    {
+      "id": "5",
+      "name": "Debugging & Troubleshooting",
+      "icon": "FaBug"
+    },
+    {
+      "id": "6",
+      "name": "SDLC & Agile",
+      "icon": "FaTasks"
+    },
+    {
+      "id": "7",
+      "name": "Requirement Engineering",
+      "icon": "FaClipboardList"
+    },
+    {
+      "id": "8",
+      "name": "Software Project Management",
+      "icon": "FaProjectDiagram"
+    },
+    {
+      "id": "9",
+      "name": "Software Testing",
+      "icon": "FaVial"
+    },
+    {
+      "id": "10",
+      "name": "Software Evolution and Maintenance",
+      "icon": "FaRedo"
+    },
+    {
+      "id": "11",
+      "name": "OpenAI APIs",
+      "icon": "SiOpenai"
+    },
+    {
+      "id": "12",
+      "name": "Local AI Models (CLIP, ISNet, U2Net)",
+      "icon": "FaBrain"
+    }
   ],
   "education": [
     {
@@ -66,37 +250,43 @@
     {
       "id": "2",
       "name": "Bachelor of Software Engineering",
-      "year": "2023-Present",
+      "year": "2023-2026",
       "description": "Sunway University",
-      "achievement": "Dean's List Award"
-    },
+      "achievement": "CGPA: 3.79, Dean's List Award"
+    }
+  ],
+  "experience": [
     {
-      "id": "3",
+      "id": "1",
       "name": "Committee Member - Public Relation Department",
       "year": "2023-2024",
       "description": "Sunway Music Society",
-      "achievement": ""
+      "achievement": "",
+      "type": "Committee"
     },
     {
-      "id": "4",
-      "name": "IBM TechXchange Hackathon 2025 ",
+      "id": "2",
+      "name": "IBM TechXchange Hackathon 2025",
       "year": "2025",
       "description": "Collaborated with a team of 4 members",
-      "achievement": ""
+      "achievement": "",
+      "type": "Hackathon"
     },
     {
-      "id": "5",
+      "id": "3",
       "name": "The L’Oréal MYSG x Monash Datathon 2025",
       "year": "2025",
       "description": "Collaborated with a team of 2 to design an AI-powered trend analyzer for beauty and lifestyle insights.",
-      "achievement": ""
+      "achievement": "",
+      "type": "Datathon"
     },
     {
-      "id": "6",
+      "id": "4",
       "name": "Web Designer Intern at BrandSwift",
       "year": "2026",
       "description": "3-month internship focused on designing and building websites for clients.",
-      "achievement": ""
+      "achievement": "",
+      "type": "Internship"
     }
   ],
   "projects": [
@@ -106,7 +296,8 @@
       "description": "A group assignment for the Programming Principles subject, involving 5 members. The project focuses on developing a Python-based system for managing books, including adding, updating, searching, and deleting records. My role includes implementing key functionalities and ensuring code efficiency.",
       "skills": "Python",
       "link": "https://github.com/sygoh0909/Book-management-system",
-      "demo": "https://www.youtube.com/embed/MpZS5QEaZeo"
+      "demo": "https://www.youtube.com/embed/MpZS5QEaZeo",
+      "live": ""
     },
     {
       "id": "2",
@@ -114,7 +305,8 @@
       "description": "A group assignment for the Object-Oriented Programming Fundamentals subject, involving 4 members, where we developed a text-based turn-based battle game inspired by Pokémon using Java. The project focused on implementing OOP principles such as inheritance and encapsulation. My role included designing class structures and implementing battle mechanics.",
       "skills": "Java",
       "link": "https://github.com/sygoh0909/Pokemon-Game",
-      "demo": "https://www.youtube.com/embed/hUB4YY_DN_A?si=dFj6OrgYokU6qmik"
+      "demo": "https://www.youtube.com/embed/hUB4YY_DN_A?si=dFj6OrgYokU6qmik",
+      "live": ""
     },
     {
       "id": "3",
@@ -122,7 +314,8 @@
       "description": "A Web Fundamentals subject assignment, involving 4 members, where our team built an event page featuring Blob the Flog, a fictional character we created and designed. The project involved HTML, CSS, and JavaScript to create engaging animations and user interactions. My role included front-end development and UI/UX design.",
       "skills": "HTML, CSS, JavaScript",
       "link": "https://github.com/sygoh0909/Blob-the-Flog-Website",
-      "demo": ""
+      "demo": "",
+      "live": ""
     },
     {
       "id": "4",
@@ -130,7 +323,8 @@
       "description": "A Web Programming subject teamwork assignment focused on addressing SDG 2 (Zero Hunger) through a PHP-based website. The platform includes features such as an event registration system and a donation page to support food aid initiatives. Additionally, it has an admin panel for managing users, events, and donations. The project incorporated user authentication, data management, and responsive design using PHP, HTML, CSS, and JavaScript. My role included back-end development with PHP, designing UI mockups in Figma, and implementing key functionalities for the event, donation and admin systems.",
       "skills": "PHP, HTML, CSS, JavaScript, Figma",
       "link": "https://github.com/sygoh0909/Food-Fox-Website",
-      "demo": ""
+      "demo": "",
+      "live": ""
     },
     {
       "id": "5",
@@ -138,7 +332,8 @@
       "description": "A personal portfolio website showcasing my projects, skills, and experience. Built using Next.js and Tailwind CSS for a modern, responsive design, with a back-end powered by Node.js. The website is deployed through Vercel, ensuring fast performance and seamless deployment. This project highlights my ability to develop and deploy full-stack web applications.",
       "skills": "Next.js, Tailwind CSS, Node.js, Vercel",
       "link": "https://github.com/sygoh0909/my-website",
-      "demo": ""
+      "demo": "",
+      "live": ""
     },
     {
       "id": "6",
@@ -146,7 +341,8 @@
       "description": "A Software Engineering subject assignment, involving 4 members, which focused on planning and designing a software project. This included creating project documentation, wireframes, and system architecture diagrams. Figma was used to design the mobile app and in-car display interface for the project, while various diagrams such as use case diagrams, sequence diagrams, class diagrams, and activity diagrams were created to illustrate system functionality. My role involved project planning, designing UI prototypes, and developing detailed system diagrams.",
       "skills": "Project Planning, Figma, UML Diagrams",
       "link": "https://github.com/sygoh0909/SPVS-System-Planning",
-      "demo": ""
+      "demo": "",
+      "live": ""
     },
     {
       "id": "7",
@@ -154,7 +350,8 @@
       "description": "A platform designed to help users monitor and manage tenant payments with ease. The system allows users to track missed payments, generate receipts for completed transactions, and produce detailed reports highlighting outstanding dues—ensuring efficient and transparent payment management for residential communities.",
       "skills": "Express.js, Next.js, PostgreSQL, Tailwind CSS",
       "link": "https://github.com/sygoh0909/indah13-residentsManagement",
-      "demo": ""
+      "demo": "",
+      "live": ""
     },
     {
       "id": "8",
@@ -162,7 +359,8 @@
       "description": "An AI-powered tool that simplifies legal documents into plain English and checks compliance with regulations like GDPR and PDPA. I contributed as the frontend developer, building and testing the user interface with React, Tailwind CSS, and TypeScript. Collaborating in a team of four, we delivered a responsive and user-friendly platform under tight hackathon deadlines.",
       "skills": "React.js, Python, FastAPI, IBM WatsonX",
       "link": "https://github.com/nathangtg/legal-guard-regtech",
-      "demo": ""
+      "demo": "",
+      "live": ""
     },
     {
       "id": "9",
@@ -170,7 +368,8 @@
       "description": "Nutri-Farm is an educational farming game built with ScalaFX. Players grow and harvest crops, manage their inventory, and earning points based on each crop nutritional value. Backed by a PostgreSQL database with Slick ORM and secure login, the game combines farming simulation with nutrition awareness.",
       "skills": "ScalaFX, PostgreSQL, CSS",
       "link": "https://github.com/sygoh0909/Nutri-Farm.git",
-      "demo": "https://www.youtube.com/embed/x1Buxhz8wgo"
+      "demo": "https://www.youtube.com/embed/x1Buxhz8wgo",
+      "live": ""
     },
     {
       "id": "10",
@@ -178,7 +377,8 @@
       "description": "Resume Analyzer is an AI-powered web app that scans resumes against job descriptions and highlights strengths, weaknesses, and missing skills. Built with Next.js and integrated with OpenAI APIs, it provides tailored feedback for job seekers to optimize their resumes for better matching.",
       "skills": "Next.js, OpenAI API, Tailwind CSS",
       "link": "https://github.com/sygoh0909/ResumeAnalyzer",
-      "demo": ""
+      "demo": "",
+      "live": ""
     },
     {
       "id": "11",
@@ -186,118 +386,132 @@
       "description": "Developed during L'Oréal Datathon 2025, Trend Analyzer is an AI-driven system that processes video datasets (e.g., YouTube CSV exports) to detect emerging, stable, or decaying trends based on tags, keywords, and metadata. Using Next.js and workflow automation, it provides actionable insights to help brands and creators act on trends before they peak.",
       "skills": "Next.js, Node.js, CSV Data Processing",
       "link": "https://github.com/sygoh0909/Trend-Analyzer",
-      "demo": ""
+      "demo": "",
+      "live": ""
     },
     {
       "id": "12",
       "name": "Dressify",
       "description": "Final Year Project – AI-powered smart wardrobe app that helps users organize their clothes, get outfit recommendations, and plan outfits using intelligent suggestions based on style and occasion.",
       "skills": "React Native, FastAPI, Python",
-      "link": "",
-      "demo": ""
+      "link": "https://github.com/sygoh0909/Dressify",
+      "demo": "",
+      "live": ""
     },
     {
       "id": "13",
       "name": "SplitBudget",
       "description": "A Flutter mobile app for splitting expenses among groups during trips or shared events. Supports personal and shared expense books, multi-currency tracking across 30+ currencies, invite codes for group collaboration, and automatic debt-minimization settlement calculations. Backed by Firebase Auth and Cloud Firestore.",
       "skills": "Flutter, Expo, Firebase, Dart",
-      "link": "",
-      "demo": ""
+      "link": "https://github.com/sygoh0909/Budget-Splitting-App",
+      "demo": "",
+      "live": ""
     },
     {
       "id": "14",
+      "name": "Sunway eLearning AI Extension",
+      "description": "A Chrome MV3 extension for Sunway University's Blackboard eLearn platform. Scrapes enrolled course announcements and deadlines via the Blackboard REST API, then runs a fully local AI/NLP pipeline — TextRank summarisation, TF-IDF classification, and regex deadline extraction — to surface prioritised, searchable notifications. Includes a smart popup dashboard and injectable sidebar overlay.",
+      "skills": "React.js, TypeScript, Tailwind CSS, Chrome Extensions",
+      "link": "https://github.com/sygoh0909/Sunway-eLearning-AI-Support-Extension",
+      "demo": "",
+      "live": ""
+    },
+    {
+      "id": "15",
       "name": "Fanfolio",
       "description": "A React mobile web app for K-pop and idol fans to create and curate digital memory scrapbooks. Features include a Memory Shelf with flippable books, a Card Maker for fan cards, activity logging, and a user profile — all stored locally. Supports bilingual UI (English / 中文) and canvas-based page editing.",
       "skills": "React.js, Tailwind CSS, TypeScript",
       "link": "",
-      "demo": ""
+      "demo": "",
+      "live": ""
     },
     {
-      "id": "15",
-      "name": "Sunway eLearning AI Extension",
-      "description": "A Chrome MV3 extension for Sunway University's Blackboard eLearn platform. Scrapes enrolled course announcements and deadlines via the Blackboard REST API, then runs a fully local AI/NLP pipeline — TextRank summarisation, TF-IDF classification, and regex deadline extraction — to surface prioritised, searchable notifications. Includes a smart popup dashboard and injectable sidebar overlay.",
-      "skills": "React.js, TypeScript, Tailwind CSS, Chrome Extensions",
-      "link": "",
-      "demo": ""
+      "id": "16",
+      "name": "SplitBudget Web",
+      "description": "A web version of my SplitBudget Flutter app, rebuilt with Next.js and improved. Users create shared books, add expenses with line items, assign each item to the people sharing it, and see who owes whom. It adds a cleaner multi-select dropdown for splitting items, and receipt scanning through a secure server route that keeps the AI API key private. It uses the same Firebase data as the original app, so existing accounts and books keep working. Deployed on Vercel.",
+      "skills": "Next.js, TypeScript, Tailwind CSS, Firebase, Vercel, OpenRouter API",
+      "link": "https://github.com/sygoh0909/Budget-Splitting-Web",
+      "demo": "",
+      "live": "https://budget-splitting-web.vercel.app/"
     }
   ],
-  "otherExperiences":[
-  {
-    "id": "1",
-    "name": "Malam Merdeka Event",
-    "year": "2022",
-    "description": "Performed as a vocalist for the Merdeka celebration night.",
-    "role": "Singer"
-  },
-  {
-    "id": "2",
-    "name": "Sunway SDG Event 2022",
-    "year": "2022",
-    "description": "Sang with a band in support of the SDG initiative.",
-    "role": "Singer"
-  },
-  {
-    "id": "3",
-    "name": "Sunway Got Talent Season 5",
-    "year": "2023",
-    "description": "Reached the semi-finals as a band vocalist.",
-    "role": "Singer"
-  },
-  {
-    "id": "4",
-    "name": "Sunway SDG Event 2023",
-    "year": "2023",
-    "description": "Performed as a vocalist for the SDG campaign.",
-    "role": "Singer"
-  },
-  {
-    "id": "5",
-    "name": "Sunway Makan Club Event",
-    "year": "2023",
-    "description": "Delivered a live band performance for the event.",
-    "role": "Singer"
-  },
-  {
-    "id": "6",
-    "name": "TARUMT Aloha Fest",
-    "year": "2024",
-    "description": "Live band vocalist at the TARUMT Aloha Festival.",
-    "role": "Singer"
-  },
-  {
-    "id": "7",
-    "name": "Leo Club Banquet Night",
-    "year": "2024",
-    "description": "Performed at the Leo Club's formal banquet.",
-    "role": "Singer"
-  },
-  {
-    "id": "8",
-    "name": "Sunway SOA Level Up Event",
-    "year": "2024",
-    "description": "Lead singer for the performance at the 'Pyjama Party' themed graduation event.",
-    "role": "Singer"
-  },
-  {
-    "id": "9",
-    "name": "APU Event",
-    "year": "2024",
-    "description": "Sang with a band at Asia Pacific University’s event.",
-    "role": "Singer"
-  },
-  {
-    "id": "10",
-    "name": "Sunfest Event",
-    "year": "2024",
-    "description": "Performed as a vocalist during Sunway's Sunfest event.",
-    "role": "Singer"
-  },
-  {
-    "id": "11",
-    "name": "Taylor's University Event",
-    "year": "2024",
-    "description": "Performed as lead singer at Taylor’s campus event.",
-    "role": "Singer"
-  }
+  "otherExperiences": [
+    {
+      "id": "1",
+      "name": "Malam Merdeka Event",
+      "year": "2022",
+      "description": "Performed as a vocalist for the Merdeka celebration night.",
+      "role": "Singer"
+    },
+    {
+      "id": "2",
+      "name": "Sunway SDG Event 2022",
+      "year": "2022",
+      "description": "Sang with a band in support of the SDG initiative.",
+      "role": "Singer"
+    },
+    {
+      "id": "3",
+      "name": "Sunway Got Talent Season 5",
+      "year": "2023",
+      "description": "Reached the semi-finals as a band vocalist.",
+      "role": "Singer"
+    },
+    {
+      "id": "4",
+      "name": "Sunway SDG Event 2023",
+      "year": "2023",
+      "description": "Performed as a vocalist for the SDG campaign.",
+      "role": "Singer"
+    },
+    {
+      "id": "5",
+      "name": "Sunway Makan Club Event",
+      "year": "2023",
+      "description": "Delivered a live band performance for the event.",
+      "role": "Singer"
+    },
+    {
+      "id": "6",
+      "name": "TARUMT Aloha Fest",
+      "year": "2024",
+      "description": "Live band vocalist at the TARUMT Aloha Festival.",
+      "role": "Singer"
+    },
+    {
+      "id": "7",
+      "name": "Leo Club Banquet Night",
+      "year": "2024",
+      "description": "Performed at the Leo Club's formal banquet.",
+      "role": "Singer"
+    },
+    {
+      "id": "8",
+      "name": "Sunway SOA Level Up Event",
+      "year": "2024",
+      "description": "Lead singer for the performance at the 'Pyjama Party' themed graduation event.",
+      "role": "Singer"
+    },
+    {
+      "id": "9",
+      "name": "APU Event",
+      "year": "2024",
+      "description": "Sang with a band at Asia Pacific University’s event.",
+      "role": "Singer"
+    },
+    {
+      "id": "10",
+      "name": "Sunfest Event",
+      "year": "2024",
+      "description": "Performed as a vocalist during Sunway's Sunfest event.",
+      "role": "Singer"
+    },
+    {
+      "id": "11",
+      "name": "Taylor's University Event",
+      "year": "2024",
+      "description": "Performed as lead singer at Taylor’s campus event.",
+      "role": "Singer"
+    }
   ]
 }

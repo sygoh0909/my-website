@@ -3,79 +3,65 @@
 @tailwind utilities;
 
 :root {
-  --background: #0A0718;
-  --foreground: #ededed;
+  --ink: #5b4a6b;
+  --ink-soft: #8d7ba0;
+  --pink: #ffd3e4; --lav: #e0d4ff; --sky: #cde7ff; --mint: #cff5e1; --peach: #ffe2cc; --lemon: #fff3bf;
 }
-
-* {
-  scroll-behavior: smooth;
-}
-
+* { scroll-behavior: smooth; }
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  font-family: 'Nunito', system-ui, sans-serif;
+  background: linear-gradient(135deg, #ffe6f1 0%, #ece3ff 35%, #d9edff 70%, #d8f7e8 100%) fixed;
+  min-height: 100vh;
 }
+.hand { font-family: 'Caveat', cursive; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#ffc2da, #c9b6ff); border-radius: 8px; }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* ruled notebook paper with a margin line */
+.paper {
+  background-color: #fffdf8;
+  background-image:
+    linear-gradient(90deg, transparent 54px, #ffb6cf 54px, #ffb6cf 56px, transparent 56px),
+    repeating-linear-gradient(transparent 0, transparent 31px, #dfe9ff 31px, #dfe9ff 32px);
+  box-shadow: 0 30px 60px -20px rgba(150, 120, 200, .35), 0 0 0 1px rgba(255,255,255,.8) inset;
 }
-::-webkit-scrollbar-track {
-  background: #0A0718;
+.tape {
+  position: absolute; top: -12px; left: 50%; width: 84px; height: 24px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: repeating-linear-gradient(45deg, rgba(255,255,255,.65) 0 6px, rgba(255,255,255,.3) 6px 12px), var(--tape, #ffc2da);
+  opacity: .85; border-radius: 2px;
 }
-::-webkit-scrollbar-thumb {
-  background: #6d28d9;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
-}
+.sticker { box-shadow: 0 6px 14px -6px rgba(120, 90, 170, .45), 0 0 0 3px rgba(255,255,255,.9) inset; }
+.tag { font-size: .7rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: rgba(255,255,255,.75); color: var(--ink); }
+.glass { background: rgba(255,255,255,.55); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.8); }
 
+.obj { cursor: pointer; transition: transform .25s ease; transform-box: fill-box; transform-origin: center bottom; outline: none; }
+.obj:hover, .obj:focus-visible { transform: translateY(-8px) scale(1.04); filter: drop-shadow(0 10px 8px rgba(150,110,200,.35)); }
+.bob { animation: bob 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes bob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-9px) rotate(3deg); } }
+.steam { animation: steam 2.4s ease-in-out infinite; }
+@keyframes steam { 0%,100% { opacity: .3; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-5px); } }
 
-/* Noise texture overlay */
-.noise-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-}
+/* plain gradient backdrops for projects & skills */
+.board { background: linear-gradient(135deg, #fff1e6, #ffe6f1 50%, #ece3ff); box-shadow: 0 30px 60px -20px rgba(150,120,200,.35), 0 0 0 1px #fff inset; }
+.candy { background: linear-gradient(135deg, #e6faf0, #dff0ff 55%, #ece6ff); box-shadow: 0 30px 60px -20px rgba(120,150,200,.35), 0 0 0 1px #fff inset; }
 
-/* Glow utilities */
-.glow-purple {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15), 0 0 40px rgba(139, 92, 246, 0.05);
-}
+/* playground animations */
+.spin { animation: spin 40s linear infinite; transform-box: fill-box; transform-origin: center; }
+.spin-rev { animation: spin 40s linear infinite reverse; transform-box: fill-box; transform-origin: 50% 0; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.drift { animation: drift 28s ease-in-out infinite alternate; }
+@keyframes drift { from { transform: translateX(-40px); } to { transform: translateX(50px); } }
+.horse { animation: horse 2.4s ease-in-out infinite; }
+@keyframes horse { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
 
-.glow-purple-hover:hover {
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.25), 0 0 50px rgba(139, 92, 246, 0.1);
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 50%, #818cf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glass card */
-.glass-card {
-  background: rgba(26, 17, 64, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(139, 92, 246, 0.12);
-}
-
-/* Tag pill */
-.skill-tag {
-  background: rgba(109, 40, 217, 0.15);
-  border: 1px solid rgba(139, 92, 246, 0.25);
-  color: #c4b5fd;
-  font-size: 0.7rem;
-  padding: 2px 10px;
-  border-radius: 999px;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
+/* ride-themed page backdrops */
+.sky { background: linear-gradient(180deg, #cfe6ff, #ffe9f3 62%, #c9f0dc); box-shadow: 0 30px 60px -20px rgba(120,150,200,.35), 0 0 0 1px #fff inset; }
+.dusk { background: linear-gradient(180deg, #d9e8ff, #f1e6ff 55%, #ffe8dc); box-shadow: 0 30px 60px -20px rgba(150,120,200,.35), 0 0 0 1px #fff inset; }
+.booth { background: #fffaf0; box-shadow: 0 30px 60px -20px rgba(200,150,120,.35), 0 0 0 1px #fff inset; }
+.awning { position: relative; height: 34px; background: repeating-linear-gradient(90deg, #ffc2da 0 36px, #fff 36px 72px); }
+.awning::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 14px; background: radial-gradient(circle at 18px 0, #ffc2da 17px, transparent 18px) 0 0/72px 14px, radial-gradient(circle at 54px 0, #fff 17px, transparent 18px) 0 0/72px 14px; filter: drop-shadow(0 3px 2px rgba(150,120,200,.2)); }
+.pop { transition: transform .2s; transform-box: fill-box; transform-origin: center; cursor: pointer; outline: none; }
+.pop:hover, .pop:focus-visible { transform: scale(1.18); }
+.wheel:hover .spin, .wheel:hover .spin-rev { animation-play-state: paused; }
