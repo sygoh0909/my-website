@@ -73,6 +73,8 @@ const Horse = ({ x, y, c, mane = "#e0d4ff", k = 0.72 }) => (
 );
 
 const Desk = ({ onOpen }) => {
+  const narrow = useNarrow();
+  const T = (t) => (narrow ? t : undefined);
   const [zoom, setZoom] = useState(null);
   const [fly, setFly] = useState(false);
   const go = (to, el) => { if (to === "experience") { if (!fly) { setFly(true); setTimeout(() => onOpen("experience"), 1600); } return; } if (!el) return setZoom({ to, o: "50% 50%" }); const r = el.getBoundingClientRect(); setZoom({ to, o: `${r.left + r.width / 2}px ${r.top + r.height / 2}px` }); };
@@ -91,33 +93,33 @@ const Desk = ({ onOpen }) => {
         <span className="hidden sm:inline text-xs font-bold text-[color:var(--ink-soft)]">· tap a ride to explore</span>
       </div>
       <motion.div className="absolute inset-0" onMouseMove={move} onMouseLeave={leave} animate={zoom ? { scale: 2.6, opacity: 0 } : { scale: 1, opacity: 1 }} style={{ transformOrigin: zoom?.o }} transition={{ duration: 0.75, ease: [0.5, 0, 0.75, 0] }} onAnimationComplete={() => zoom && onOpen(zoom.to)}>
-        <svg viewBox="0 0 1100 740" preserveAspectRatio="xMidYMid meet" className="w-full h-full block">
+        <svg viewBox={narrow ? "0 0 600 1300" : "0 0 1100 740"} preserveAspectRatio="xMidYMid meet" className="w-full h-full block">
           <defs>
-            <linearGradient id="pskyg" x1="0" y1="0" x2="0" y2="740" gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#bfe0ff" /><stop offset=".7" stopColor="#ffe9f3" /><stop offset="1" stopColor="#fff6dc" /></linearGradient>
+            <linearGradient id="pskyg" x1="0" y1="0" x2="0" y2={narrow ? 900 : 740} gradientUnits="userSpaceOnUse"><stop offset="0" stopColor="#bfe0ff" /><stop offset=".7" stopColor="#ffe9f3" /><stop offset="1" stopColor="#fff6dc" /></linearGradient>
             <linearGradient id="coverg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffc2da" /><stop offset=".55" stopColor="#d9c6ff" /><stop offset="1" stopColor="#bfe0ff" /></linearGradient>
           </defs>
           <rect x="-3000" y="-2000" width="7000" height="5000" fill="url(#pskyg)" />
           {/* far layer: sun, clouds, balloons, far hills */}
           <motion.g style={{ x: far }} animate={{ y: fly ? 260 : 0 }} transition={{ duration: 1.6, ease: "easeIn" }}>
-            <circle cx="930" cy="130" r="48" fill="#fff3bf" /><circle cx="930" cy="130" r="66" fill="#fff3bf" opacity=".4" />
-            {[[170, 120, 1], [560, 90, 0.8], [820, 210, 0.7]].map(([x, y, k], i) => (
+            <circle cx={narrow ? 510 : 930} cy={narrow ? 110 : 130} r="48" fill="#fff3bf" /><circle cx={narrow ? 510 : 930} cy={narrow ? 110 : 130} r="66" fill="#fff3bf" opacity=".4" />
+            {(narrow ? [[100, 170, 1], [330, 60, 0.8], [540, 290, 0.6]] : [[170, 120, 1], [560, 90, 0.8], [820, 210, 0.7]]).map(([x, y, k], i) => (
               <g key={i} className="drift" style={{ animationDelay: `${-i * 7}s` }} fill="#fff"><ellipse cx={x} cy={y} rx={60 * k} ry={20 * k} /><ellipse cx={x - 30 * k} cy={y + 6} rx={34 * k} ry={16 * k} /><ellipse cx={x + 32 * k} cy={y + 6} rx={38 * k} ry={17 * k} /></g>
             ))}
             
-            <path d="M-3000 470H-100Q150 400 400 460T900 450T1300 440H4000V3000H-3000Z" fill="#d6f2e3" />
+            <path d="M-3000 470H-100Q150 400 400 460T900 450T1300 440H4000V3000H-3000Z" fill="#d6f2e3" transform={T("translate(0 330)")} />
           </motion.g>
 
-          <motion.g style={{ x: mid }} animate={{ y: fly ? 480 : 0 }} transition={{ duration: 1.6, ease: "easeIn" }}><path d="M-3000 520H-100Q250 470 560 520T1300 510H4000V3000H-3000Z" fill="#bfe9cf" /></motion.g>
-          {/* near layer: front grass, pond + leaping dolphin, trees */}
+          <motion.g style={{ x: mid }} animate={{ y: fly ? 480 : 0 }} transition={{ duration: 1.6, ease: "easeIn" }}><path d="M-3000 520H-100Q250 470 560 520T1300 510H4000V3000H-3000Z" fill="#bfe9cf" transform={T("translate(0 330)")} /></motion.g>
+          {/* near layer: front grass, pond + trees */}
           <motion.g style={{ x: near }} animate={{ y: fly ? 800 : 0 }} transition={{ duration: 1.6, ease: "easeIn" }}>
-            <path d="M-3000 590H-100Q300 560 600 595T1300 585H4000V3000H-3000Z" fill="#a8e0bf" />
-            <path d="M395 740L492 628H548L645 740Z" fill="#ffe4d2" />
-            {[[-10, 560], [1090, 575]].map(([x, y], i) => <g key={i}><rect x={x - 6} y={y} width="12" height="50" rx="5" fill="#f3c7a3" /><circle cx={x} cy={y - 8} r="38" fill="#9edcb8" stroke="#fff" strokeWidth="3" /><circle cx={x - 12} cy={y - 14} r="6" fill="#ffc2da" /><circle cx={x + 14} cy={y} r="6" fill="#fff3bf" /></g>)}
+            <path d="M-3000 590H-100Q300 560 600 595T1300 585H4000V3000H-3000Z" fill="#a8e0bf" transform={T("translate(0 330)")} />
+            {!narrow && <path d="M395 740L492 628H548L645 740Z" fill="#ffe4d2" />}
+            {(narrow ? [[580, 800], [-10, 1200]] : [[-10, 560], [1090, 575]]).map(([x, y], i) => <g key={i}><rect x={x - 6} y={y} width="12" height="50" rx="5" fill="#f3c7a3" /><circle cx={x} cy={y - 8} r="38" fill="#9edcb8" stroke="#fff" strokeWidth="3" /><circle cx={x - 12} cy={y - 14} r="6" fill="#ffc2da" /><circle cx={x + 14} cy={y} r="6" fill="#fff3bf" /></g>)}
           </motion.g>
           {/* mid layer: attractions */}
           <motion.g style={{ x: mid }} animate={{ y: fly ? 480 : 0 }} transition={{ duration: 1.6, ease: "easeIn" }}>
             {/* ferris wheel → projects */}
-            <Obj to="projects" label="Projects" cx={230} cy={320} lx={230} ly={568} go={go}><g transform="translate(-70 0)">
+            <g transform={T("translate(-54.5 220) scale(1.15)")}><Obj to="projects" label="Projects" cx={230} cy={320} lx={230} ly={568} go={go}><g transform="translate(-70 0)">
               <path d="M300 320L236 525M300 320L364 525M215 525h170" stroke="#d9c6ff" strokeWidth="12" strokeLinecap="round" fill="none" />
               <g className="spin">
                 <circle cx="300" cy="320" r="178" fill="none" />
@@ -129,9 +131,9 @@ const Desk = ({ onOpen }) => {
                 ); })}
               </g>
               <circle cx="300" cy="320" r="16" fill="#ffc2da" stroke="#fff" strokeWidth="4" />
-            </g></Obj>
+            </g></Obj></g>
             {/* carousel → skills */}
-            <Obj to="skills" label="Skills" cx={770} cy={430} lx={770} ly={568} go={go}><g transform="translate(30 0)">
+            <g transform={T("translate(-435 550) scale(1.1)")}><Obj to="skills" label="Skills" cx={770} cy={430} lx={770} ly={568} go={go}><g transform="translate(30 0)">
               <rect x="590" y="498" width="300" height="24" rx="12" fill="#ffd9e6" stroke="#fff" strokeWidth="3" /><ellipse cx="740" cy="498" rx="150" ry="14" fill="#fff3bf" stroke="#fff" strokeWidth="3" />
               {[620, 680, 740, 800, 860].map((x) => <path key={x} d={`M${x} 498V382`} stroke="#fff" strokeWidth="6" strokeLinecap="round" />)}
               {[620, 680, 800, 860, 740].map((x, i) => (
@@ -139,16 +141,16 @@ const Desk = ({ onOpen }) => {
               ))}
               {Array.from({ length: 6 }).map((_, k) => <polygon key={k} points={`740,290 ${580 + k * 53.4},384 ${580 + (k + 1) * 53.4},384`} fill={k % 2 ? "#fff" : "#ffc2da"} stroke="#fff" strokeWidth="2" />)}
               <rect x="574" y="380" width="332" height="14" rx="7" fill="#fff" />
-            </g></Obj>
+            </g></Obj></g>
             {/* ticket booth → experience */}
-            <Obj to="home" label="Portfolio" cx={520} cy={575} lx={520} ly={692} go={go}><g transform="translate(520 640) scale(1.15) translate(-985 -522)">
+            <g transform={T("translate(-500 440) scale(1.2)")}><Obj to="home" label="Portfolio" cx={520} cy={575} lx={520} ly={692} go={go}><g transform="translate(520 640) scale(1.15) translate(-985 -522)">
               <rect x="935" y="430" width="100" height="92" rx="8" fill="#fff3bf" stroke="#fff" strokeWidth="4" />
               <rect x="955" y="458" width="60" height="38" rx="6" fill="#cde7ff" stroke="#fff" strokeWidth="3" /><text x="985" y="450" textAnchor="middle" className="hand" fontSize="17" fontWeight="700" fill="#5b4a6b">portfolio</text>
               {Array.from({ length: 5 }).map((_, k) => <polygon key={k} points={`${925 + k * 24},402 ${949 + k * 24},402 ${953 + k * 24},434 ${921 + k * 24},434`} fill={k % 2 ? "#fff" : "#a98bff"} stroke="#fff" strokeWidth="2" />)}
               <rect x="921" y="428" width="128" height="8" rx="4" fill="#e0d4ff" />
-            </g></Obj>
+            </g></Obj></g>
             {/* hot-air balloon → experience */}
-            <Obj to="experience" label="Experience" cx={500} cy={250} lx={500} ly={420} go={go}>
+            <g transform={T("translate(-210 -137.5) scale(1.25)")}><Obj to="experience" label="Experience" cx={500} cy={250} lx={500} ly={420} go={go}>
               <motion.g animate={{ y: fly ? -1500 : 0 }} transition={{ duration: 1.6, ease: [0.4, 0, 0.9, 0.6] }}><g className="bob">
                 <path d="M474 316L490 352M526 316L510 352" stroke="#fff" strokeWidth="3" />
                 <ellipse cx="500" cy="250" rx="64" ry="74" fill="#ffc2da" stroke="#fff" strokeWidth="4" />
@@ -156,7 +158,7 @@ const Desk = ({ onOpen }) => {
                 <ellipse cx="500" cy="250" rx="64" ry="74" fill="none" stroke="#fff" strokeWidth="4" />
                 <rect x="482" y="350" width="36" height="26" rx="7" fill="#f3c7a3" stroke="#fff" strokeWidth="3" />
               </g></motion.g>
-            </Obj>
+            </Obj></g>
           </motion.g>
 
           
@@ -168,7 +170,7 @@ const Desk = ({ onOpen }) => {
 
 // ───────────── Journal pages ─────────────
 const Heading = ({ children, sub, flat }) => (
-  <div className={`mb-8 ${flat ? "pl-4 sm:pl-6" : "pl-16"}`}>
+  <div className={`mb-8 ${flat ? "sm:pl-6" : "pl-16"}`}>
     <h2 className="hand text-5xl sm:text-6xl font-bold leading-none">{children}</h2>
     {sub && <p className="text-sm text-[color:var(--ink-soft)] mt-2">{sub}</p>}
   </div>
@@ -176,8 +178,8 @@ const Heading = ({ children, sub, flat }) => (
 
 const Home = ({ data, go }) => (
   <div>
-  <div className="awning -mt-10 -ml-4 sm:-ml-6 -mr-6 sm:-mr-10 mb-12" />
-  <div className="pl-4 sm:pl-6 pr-2 relative">
+  <div className="awning -mt-8 sm:-mt-10 -ml-3 sm:-ml-6 -mr-3 sm:-mr-10 mb-12" />
+  <div className="sm:pl-6 sm:pr-2 relative">
     <Balloon className="bob hidden md:block absolute right-6 top-0 w-32" />
     <h1 className="hand text-6xl sm:text-8xl font-bold leading-none my-2">
       I&apos;m <span className="inline-block px-2 pt-4 pb-3 -my-4" style={{ background: "linear-gradient(90deg,#ff8fb8,#a98bff,#6fb7ff)", WebkitBackgroundClip: "text", color: "transparent" }}>Shu Yi</span>
@@ -187,7 +189,7 @@ const Home = ({ data, go }) => (
       Welcome in! I build full-stack web apps, mobile apps and AI-powered tools, and I treat every project like a ride worth building.
       Hop on the Ferris wheel for my projects, spin the carousel for my skills, or float up in the balloon to see where I&apos;ve studied and worked.
     </p>
-    <div className="flex flex-wrap gap-4 mt-8">
+    <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 mt-8">
       {[
         { v: `${data.projects.length}`, l: "projects", c: 0 },
         { v: "3.79", l: "degree CGPA", c: 1 },
@@ -215,9 +217,16 @@ const Home = ({ data, go }) => (
   </div>
 );
 
+const useNarrow = (px = 640) => {
+  const [n, setN] = useState(false);
+  useEffect(() => { const f = () => setN(window.innerWidth < px); f(); window.addEventListener("resize", f); return () => window.removeEventListener("resize", f); }, [px]);
+  return n;
+};
+
 const FEATURED = ["12", "7", "13"];
 const Projects = ({ projects, onPick }) => {
   const [hov, setHov] = useState(null);
+  const narrow = useNarrow(), q = narrow ? 1.25 : 1;
   const n = projects.length, R = 235, cx = 400, cy = 290, shown = hov !== null ? projects[hov] : null;
   const D = { animationDuration: "160s" };
   const featured = FEATURED.map((id) => projects.find((p) => p.id === id)).filter(Boolean);
@@ -225,7 +234,8 @@ const Projects = ({ projects, onPick }) => {
   return (
     <div>
       <Heading flat sub="Start with the featured ones, or ride the wheel and explore them all">My Projects</Heading>
-      <div className="pl-4 sm:pl-6 pr-2">
+      <div className="sm:pl-6 sm:pr-2">
+        <div>
         <h3 className="hand text-3xl font-bold mb-3">Featured</h3>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((p, k) => (
@@ -238,14 +248,15 @@ const Projects = ({ projects, onPick }) => {
               </div>
             </motion.button>
           ))}
-        </div>
+        </div></div>
 
+        <div>
         <h3 className="hand text-3xl font-bold mt-12 mb-1">All {n} projects</h3>
         <motion.p animate={{ scale: [1, 1.04, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-sm font-bold mb-2">
           Click each cabin to see more
         </motion.p>
-        <div className="wheel">
-          <svg viewBox="0 0 800 640" className="w-full max-w-3xl mx-auto block">
+        <div className="wheel -mx-2 sm:mx-0">
+          <svg viewBox="105 35 590 595" className="w-full max-w-2xl mx-auto block">
             <path d="M400 290L290 612M400 290L510 612M250 612h300" stroke="#d9c6ff" strokeWidth="14" strokeLinecap="round" fill="none" />
             <g className="spin" style={D}>
               <circle cx={cx} cy={cy} r={R + 70} fill="none" />
@@ -260,9 +271,9 @@ const Projects = ({ projects, onPick }) => {
                     <g className="spin-rev" style={D}>
                       <path d={`M${x} ${y}v14`} stroke="#fff" strokeWidth="4" />
                       <g className="pop" role="button" tabIndex={0} aria-label={p.name} onClick={open} onKeyDown={(e) => e.key === "Enter" && open()} onMouseEnter={() => setHov(i)} onMouseLeave={() => setHov(null)}>
-                        <rect x={x - 32} y={y + 14} width="64" height="50" rx="13" fill={G[i % 6][0]} stroke={hov === i ? "#a98bff" : "#fff"} strokeWidth="4" />
-                        <rect x={x - 23} y={y + 22} width="46" height="12" rx="5" fill="#fff" opacity=".75" />
-                        <text x={x} y={y + 56} textAnchor="middle" className="hand" fontSize="22" fontWeight="700" fill="#5b4a6b">{p.id}</text>
+                        <rect x={x - 32 * q} y={y + 14} width={64 * q} height={50 * q} rx={13 * q} fill={G[i % 6][0]} stroke={hov === i ? "#a98bff" : "#fff"} strokeWidth="4" />
+                        <rect x={x - 23 * q} y={y + 22} width={46 * q} height={12 * q} rx={5 * q} fill="#fff" opacity=".75" />
+                        <text x={x} y={y + 14 + 42 * q} textAnchor="middle" className="hand" fontSize={22 * q} fontWeight="700" fill="#5b4a6b">{p.id}</text>
                       </g>
                     </g>
                   </g>
@@ -275,10 +286,10 @@ const Projects = ({ projects, onPick }) => {
             {shown ? (<>
               <p className="hand text-4xl font-bold leading-none">#{shown.id} {shown.name}</p>
               <p className="text-xs font-bold text-[color:var(--ink-soft)] mt-1">click to open</p>
-            </>) : <p className="hand text-3xl text-[color:var(--ink-soft)]">hover a cabin to peek, click to open</p>}
+            </>) : <p className="hand text-3xl text-[color:var(--ink-soft)]"><span className="hidden sm:inline">hover a cabin to peek, click to open</span><span className="sm:hidden">tap a cabin to open</span></p>}
           </div>
         </div>
-
+        </div>
       </div>
     </div>
   );
@@ -354,7 +365,7 @@ const Experience = ({ education, experience, other }) => {
   return (
     <div>
       <Heading flat sub="The first page lists every chapter, tap one to flip straight to it">Education &amp; Experience</Heading>
-      <div className="pl-4 sm:pl-6 pr-2">
+      <div className="sm:pl-6 sm:pr-2">
         <div className="max-w-3xl mx-auto" style={{ perspective: 1800 }}>
           <div className="relative rounded-l-xl rounded-r-3xl pl-3" style={{ background: "linear-gradient(90deg,#ff9fc4,#c9b6ff)", boxShadow: "8px 8px 0 -2px #f1e8ff, 16px 16px 0 -4px #e3d6ff, 0 28px 40px -18px rgba(150,120,200,.5)" }}>
             <AnimatePresence mode="wait" custom={dir}>
@@ -440,6 +451,10 @@ const HC = ["#ffc2da", "#cde7ff", "#fff3bf", "#d8f7e8", "#e0d4ff"];
 
 const Skills = ({ skills }) => {
   const [cat, setCat] = useState(null);
+  const narrow = useNarrow();
+  const V = narrow ? { W: 420, H: 540, m: 10 } : { W: 700, H: 310, m: 25 };
+  const mid = V.W / 2, step = (V.W - 2 * V.m) / 10;
+  const pos = (i) => (narrow ? { x: i < 3 ? 70 + i * 140 : 140 + (i - 3) * 140, dy: i < 3 ? 0 : 230 } : { x: 90 + i * 130, dy: 0 });
   const entries = Object.entries(skills);
   const total = entries.reduce((n, [, v]) => n + v.length, 0);
   const sel = cat ? entries.findIndex(([k]) => k === cat) : -1;
@@ -447,32 +462,38 @@ const Skills = ({ skills }) => {
   return (
     <div>
       <Heading flat sub={`${total} tools across ${entries.length} toolboxes`}>My Skills</Heading>
-      <div className="pl-4 sm:pl-6 pr-2">
+      <div className="sm:pl-6 sm:pr-2">
         <motion.p animate={{ scale: [1, 1.04, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 text-sm font-bold mb-2">Click each horse to see more</motion.p>
-        <div className="wheel">
-          <svg viewBox="0 0 700 310" className="w-full max-w-3xl mx-auto block">
-            <path d="M350 4V20" stroke="#d9c6ff" strokeWidth="4" strokeLinecap="round" /><path d="M350 6L374 12L350 18Z" fill="#ffc2da" />
-            {Array.from({ length: 10 }).map((_, k) => <polygon key={k} points={`350,20 ${25 + k * 65},84 ${25 + (k + 1) * 65},84`} fill={k % 2 ? "#fff" : "#ffc2da"} stroke="#fff" strokeWidth="2" />)}
-            <rect x="19" y="80" width="662" height="12" rx="6" fill="#fff" />
-            <rect x="40" y="228" width="620" height="24" rx="12" fill="#ffd9e6" stroke="#fff" strokeWidth="3" />
-            {entries.map((_, i) => <path key={i} d={`M${90 + i * 130} 92V228`} stroke="#fff" strokeWidth="6" strokeLinecap="round" />)}
+        <div className="wheel -mx-2 sm:mx-0">
+          <svg viewBox={`0 0 ${V.W} ${V.H}`} className="w-full max-w-3xl mx-auto block">
+            <path d={`M${mid} 4V20`} stroke="#d9c6ff" strokeWidth="4" strokeLinecap="round" /><path d={`M${mid} 6L${mid + 24} 12L${mid} 18Z`} fill="#ffc2da" />
+            {Array.from({ length: 10 }).map((_, k) => <polygon key={k} points={`${mid},20 ${V.m + k * step},84 ${V.m + (k + 1) * step},84`} fill={k % 2 ? "#fff" : "#ffc2da"} stroke="#fff" strokeWidth="2" />)}
+            <rect x={V.m - 6} y="80" width={V.W - 2 * V.m + 12} height="12" rx="6" fill="#fff" />
+            {narrow ? (<>
+              <rect x="20" y="228" width="380" height="24" rx="12" fill="#ffd9e6" stroke="#fff" strokeWidth="3" />
+              <rect x="62" y="310" width="296" height="12" rx="6" fill="#fff" />
+              <rect x="62" y="458" width="296" height="24" rx="12" fill="#ffd9e6" stroke="#fff" strokeWidth="3" />
+            </>) : <rect x="40" y="228" width="620" height="24" rx="12" fill="#ffd9e6" stroke="#fff" strokeWidth="3" />}
+            {entries.map((_, i) => { const { x, dy } = pos(i); return <path key={i} d={`M${x} ${92 + dy}V${228 + dy}`} stroke="#fff" strokeWidth="6" strokeLinecap="round" />; })}
             {entries.map(([k, v], i) => {
-              const x = 90 + i * 130, on = cat === k, I = Icons[REP[k]] || Icons.FaStar, pick = () => setCat(on ? null : k);
+              const { x, dy } = pos(i), on = cat === k, I = Icons[REP[k]] || Icons.FaStar, pick = () => setCat(on ? null : k);
               return (
-                <g key={k} className="pop" role="button" tabIndex={0} aria-label={`${catTitle[k] || k}, ${v.length} skills`} aria-pressed={on} onClick={pick} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && pick()}>
-                  {on && <ellipse cx={x} cy="168" rx="64" ry="72" fill="#fff" opacity=".65" />}
-                  <g className="horse" style={{ animationDelay: `${-i * 0.5}s` }}>
-                    <Horse x={x} y={192} k={1.2} c={HC[i % 5]} mane={HC[(i + 2) % 5]} />
-                    <circle cx={x} cy="122" r="21" fill="#fff" stroke={SK[i % 5]} strokeWidth="3" />
-                    <I x={x - 11} y="111" size="22" color={SK[i % 5]} />
+                <g key={k} transform={`translate(0 ${dy})`}>
+                  <g className="pop" role="button" tabIndex={0} aria-label={`${catTitle[k] || k}, ${v.length} skills`} aria-pressed={on} onClick={pick} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && pick()}>
+                    {on && <ellipse cx={x} cy="168" rx="64" ry="72" fill="#fff" opacity=".65" />}
+                    <g className="horse" style={{ animationDelay: `${-i * 0.5}s` }}>
+                      <Horse x={x} y={192} k={1.2} c={HC[i % 5]} mane={HC[(i + 2) % 5]} />
+                      <circle cx={x} cy="122" r="21" fill="#fff" stroke={SK[i % 5]} strokeWidth="3" />
+                      <I x={x - 11} y="111" size="22" color={SK[i % 5]} />
+                    </g>
                   </g>
                 </g>
               );
             })}
             {entries.map(([k, v], i) => {
-              const x = 90 + i * 130, pick = () => setCat(cat === k ? null : k);
+              const { x, dy } = pos(i), pick = () => setCat(cat === k ? null : k);
               return (
-                <g key={k} onClick={pick} style={{ cursor: "pointer" }}>
+                <g key={k} transform={`translate(0 ${dy})`} onClick={pick} style={{ cursor: "pointer" }}>
                   <text x={x} y="276" textAnchor="middle" className="hand" fontSize="21" fontWeight="700" fill="#5b4a6b">{SHORT[k] || k}</text>
                   <text x={x} y="296" textAnchor="middle" fontSize="12" fontWeight="700" fill="#8d7ba0">{v.length} skills</text>
                 </g>
@@ -515,7 +536,7 @@ const Skills = ({ skills }) => {
   );
 };
 
-const SHELL = { home: "booth pl-4 sm:pl-6 overflow-hidden", experience: "dusk pl-4 sm:pl-6", projects: "sky pl-4 sm:pl-6", skills: "candy pl-4 sm:pl-6" };
+const SHELL = { home: "booth pl-3 sm:pl-6 overflow-hidden", experience: "dusk pl-3 sm:pl-6", projects: "sky pl-3 sm:pl-6", skills: "candy pl-3 sm:pl-6" };
 const Journal = ({ data, tab, setTab, close }) => {
   const [project, setProject] = useState(null);
   return (
@@ -526,15 +547,14 @@ const Journal = ({ data, tab, setTab, close }) => {
       </div>
       <div className="relative">
         {/* index tabs */}
-        <div className="flex sm:absolute sm:-right-3 sm:top-10 sm:flex-col gap-2 sm:translate-x-full mb-3 sm:mb-0 overflow-x-auto z-10">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4 2xl:mb-0 2xl:absolute 2xl:-right-3 2xl:top-10 2xl:flex 2xl:flex-col 2xl:translate-x-full z-10">
           {TABS.map((t, i) => (
-            <motion.button key={t.id} onClick={() => setTab(t.id)} className="sticker hand text-xl px-4 py-2 rounded-r-xl sm:rounded-l-none rounded-l-xl whitespace-nowrap"
-              style={{ background: grad(i), x: tab === t.id ? 0 : -6 }} animate={{ x: tab === t.id ? 8 : 0 }} whileHover={{ x: 10 }}>
+            <button key={t.id} onClick={() => setTab(t.id)} aria-current={tab === t.id} className={`sticker hand text-xl px-4 py-2 rounded-xl 2xl:rounded-l-none whitespace-nowrap text-center transition ${tab === t.id ? "scale-105 2xl:scale-100 2xl:translate-x-2 ring-2 ring-white" : "opacity-85 hover:opacity-100 2xl:hover:translate-x-2"}`} style={{ background: grad(i) }}>
               {t.label}
-            </motion.button>
+            </button>
           ))}
         </div>
-        <div className={`${SHELL[tab]} rounded-3xl py-10 pr-6 sm:pr-10 min-h-[70vh] sm:mr-4`}>
+        <div className={`${SHELL[tab]} rounded-3xl py-8 sm:py-10 pr-3 sm:pr-10 min-h-[70vh] 2xl:mr-4`}>
           <AnimatePresence mode="wait">
             <motion.div key={tab} initial={{ opacity: 0, rotateY: -25, x: 30 }} animate={{ opacity: 1, rotateY: 0, x: 0 }} exit={{ opacity: 0, x: -30 }} transition={{ duration: 0.35 }} style={{ transformOrigin: "left" }}>
               {tab === "home" && <Home data={data} go={setTab} />}
