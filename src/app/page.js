@@ -25,7 +25,6 @@ const SOCIAL = [
 const catTitle = { languages: "Languages", frameworks: "Frameworks & Libraries", databases: "Databases & Tools", platforms: "Software & Platforms", otherSkills: "Other Skills" };
 
 // ───────────── Shared bits ─────────────
-// Cartoon dolphin (viewBox 160x100). Nested <svg> needs an explicit height, otherwise it
 // stretches to 100% of the parent and ends up hidden/offset — so derive it from the width.
 const Balloon = ({ className = "" }) => (
   <svg viewBox="0 0 100 140" className={className}>
@@ -370,7 +369,7 @@ const Experience = ({ education, experience, other }) => {
                         <button key={e.type + e.id} onClick={() => flip(i + 1)} className="w-full flex items-center gap-3 py-3 text-left hover:bg-pink-50 rounded-xl px-2 transition">
                           <MiniBalloon c={G[i % 6][0]} className="w-6 shrink-0" />
                           <span className="hand text-2xl w-8 text-[color:var(--ink-soft)]">{i + 1}</span>
-                          <span className="flex-1 min-w-0"><span className="block font-extrabold leading-5">{e.name}</span><span className="block text-xs opacity-70">{e.type} · {e.year}</span></span>
+                          <span className="flex-1 min-w-0"><span className="block font-extrabold leading-5">{e.name}</span><span className="block text-xs opacity-70">{e.year}</span></span>
                           <span className="hand text-xl opacity-50">p.{i + 2}</span>
                         </button>
                       ))}
@@ -379,7 +378,7 @@ const Experience = ({ education, experience, other }) => {
                 ) : (
                   <div className="flex flex-col-reverse sm:flex-row gap-6 items-center sm:items-start">
                     <div className="flex-1 w-full">
-                      <div className="flex items-center gap-3"><span className="tag" style={{ background: grad(pg - 1) }}>{cur.type}</span><span className="hand text-3xl font-bold opacity-60">{cur.year}</span></div>
+                      <div className="flex items-center gap-3"><span className="hand text-3xl font-bold opacity-60">{cur.year}</span></div>
                       <h3 className="hand text-4xl sm:text-5xl font-bold leading-10 mt-3">{cur.name}</h3>
                       <p className="mt-4 leading-7 opacity-80">{cur.description}</p>
                       {cur.achievement && <span className="tag mt-4 inline-block" style={{ background: grad(pg + 1) }}>{cur.achievement}</span>}
