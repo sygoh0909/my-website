@@ -353,7 +353,7 @@ const Experience = ({ education, experience, other }) => {
   const nav = "sticker rounded-full px-5 py-2 text-sm font-extrabold transition hover:-translate-y-0.5 disabled:opacity-40 disabled:hover:translate-y-0";
   return (
     <div>
-      <Heading flat sub="Open the book: the first page lists every chapter, tap one to flip straight to it">Education &amp; Experience</Heading>
+      <Heading flat sub="The first page lists every chapter, tap one to flip straight to it">Education &amp; Experience</Heading>
       <div className="pl-4 sm:pl-6 pr-2">
         <div className="max-w-3xl mx-auto" style={{ perspective: 1800 }}>
           <div className="relative rounded-l-xl rounded-r-3xl pl-3" style={{ background: "linear-gradient(90deg,#ff9fc4,#c9b6ff)", boxShadow: "8px 8px 0 -2px #f1e8ff, 16px 16px 0 -4px #e3d6ff, 0 28px 40px -18px rgba(150,120,200,.5)" }}>
@@ -401,7 +401,7 @@ const Experience = ({ education, experience, other }) => {
         </div>
 
         <h3 className="hand text-4xl font-bold mt-14 mb-1">Additional Experiences</h3>
-        <p className="text-sm text-[color:var(--ink-soft)] mb-6">{other.length} stage performances as a band vocalist, one balloon per year</p>
+        <p className="text-sm text-[color:var(--ink-soft)] mb-6">{other.length} stage performances as a band vocalist</p>
         <div className="relative max-w-2xl">
           <div className="absolute left-[11px] top-4 bottom-4 border-l-2 border-dashed border-white" />
           {byYear.map(([y, items], yi) => (
